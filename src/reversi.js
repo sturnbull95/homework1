@@ -101,7 +101,7 @@ module.exports = {
     rowColToIndex: rowColToIndex,
     indexToRowCol: indexToRowCol,
     setBoardCell: setBoardCell,
-    algebraicToRowCol: algebraicToRowCol
+    algebraicToRowCol: algebraicToRowCol,
     placeLetter: placeLetter,
     placeLetters: placeLetters,
     boardToString: boardToString,
