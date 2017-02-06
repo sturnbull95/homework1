@@ -102,15 +102,15 @@ module.exports = {
     indexToRowCol: indexToRowCol,
     setBoardCell: setBoardCell,
     algebraicToRowCol: algebraicToRowCol
-    // placeLetter: placeLetter,
-    // placeLetters: placeLetters,
-    // boardToString: boardToString,
-    // isBoardFull: isBoardFull,
-    // flip: flip,
-    // flipCells: flipCells,
-    // getCellsToFlip: getCellsToFlip,
-    // isValidMove: isValidMove,
-    // isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
-    // getLetterCounts: getLetterCounts,
-    // getValidMoves: getValidMoves
+    placeLetter: placeLetter,
+    placeLetters: placeLetters,
+    boardToString: boardToString,
+    isBoardFull: isBoardFull,
+    flip: flip,
+    flipCells: flipCells,
+    getCellsToFlip: getCellsToFlip,
+    isValidMove: isValidMove,
+    isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
+    getLetterCounts: getLetterCounts,
+    getValidMoves: getValidMoves
 }
