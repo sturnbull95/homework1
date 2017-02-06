@@ -1,41 +1,38 @@
-// reversi.js
-const rev = {
-  repeat:function(value, n){
-    console.log("hello");
+function repeat(value, n){
   const arr = [];
   for(var i = 0; i < n; i++){
     arr.push(value);
   }
   return arr;
-},
+}
 
-generateBoard:function (rows, columns, initialCellValue){
+function generateBoard(rows, columns, initialCellValue){
   var total = rows * columns;
   return repeat(initialCellValue, total);
-},
+}
 
-rowColToIndex: function (board, rowNumber, colNumber){
+function rowColToIndex(board, rowNumber, colNumber){
   var size = Math.sqrt(board.length);
   var index = 0;
   index += size * rowNumber;
   index += colNumber;
   return index;
-},
+}
 
-indexToRowCol: function (board, i){
+function indexToRowCol(board, i){
   var size = Math.sqrt(board.length);
   var rowNum = Math.floor(i/size);
   var colNum = i % size;
   var indexObj = {"row": rowNum, "col": colNum};
   return indexObj;
-},
+}
 
-setBoardCell: function (board, letter, row, col){
+function setBoardCell(board, letter, row, col){
   var index = rowColToIndex(board, row, col);
   return board.splice(index,0,letter);
-},
+}
 
-algebraicToRowCol: function(algebraicNotation){
+function algebraicToRowCol(algebraicNotation){
   var alphabet = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q",
   "R","S","T","U","V","W","X","Y","Z"];
   if(algebraicNotation.length > 2 || algebraicNotation.length < 2){
@@ -52,50 +49,68 @@ algebraicToRowCol: function(algebraicNotation){
   var rowVal = algebraicNotation.charAt(1);
   var algebraicObj = {"row": (rowVal - 1), "col": colVal};
   return algebraicObj;
-},
-
-placeLetter:function (board, letter, algebraicNotation){
-
-},
-
-placeLetters: function (board, letter, algebraicNotation){
-
-},
-
-boardToString: function (board){
-
-},
-
-isBoardFull: function (board){
-
-},
-
-flip:function (board, row, col){
-
-},
-
-flipCells: function (board, cellsToFlip){
-
-},
-
-getCellsToFlip: function (board, lastRow, lastCol){
-
-},
-
-isValidMove: function (board, letter, row, col){
-
-},
-
-isValidMoveAlgebraicNotation: function (board, letter,algebraicNotation){
-
-},
-
-getLetterCounts: function(board){
-
-},
-
-getValidMoves: function (board, letter){
-
-},
 }
-module.exports = rev;
+
+function placeLetter(board, letter, algebraicNotation){
+
+}
+
+function placeLetters(board, letter, algebraicNotation){
+
+}
+
+function boardToString(board){
+
+}
+
+function isBoardFull(board){
+
+}
+
+function flip(board, row, col){
+
+}
+
+function flipCells(board, cellsToFlip){
+
+}
+
+function getCellsToFlip(board, lastRow, lastCol){
+
+}
+
+function isValidMove(board, letter, row, col){
+
+}
+
+function isValidMoveAlgebraicNotation(board, letter,algebraicNotation){
+
+}
+
+function getLetterCounts(board){
+
+}
+
+function getValidMoves(board, letter){
+
+}
+
+module.exports = {
+    repeat: repeat,
+    generateBoard: generateBoard,
+    rowColToIndex: rowColToIndex,
+    indexToRowCol: indexToRowCol,
+    setBoardCell: setBoardCell,
+    algebraicToRowCol: algebraicToRowCol
+    // placeLetter: placeLetter,
+    // placeLetters: placeLetters,
+    // boardToString: boardToString,
+    // isBoardFull: isBoardFull,
+    // flip: flip,
+    // flipCells: flipCells,
+    // getCellsToFlip: getCellsToFlip,
+    // isValidMove: isValidMove,
+    // isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
+    // getLetterCounts: getLetterCounts,
+    // getValidMoves: getValidMoves
+}
