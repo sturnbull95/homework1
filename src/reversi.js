@@ -51,12 +51,17 @@ function algebraicToRowCol(algebraicNotation){
   var colNum = algebraicNotation.charAt(0);
   var colVal = alphabet.indexOf(colNum);
   var rowVal = algebraicNotation.charAt(1);
-  var algebraicObj = {"row": (rowVal-1), "col": colVal};
+  var algebraicObj = {"row": (rowVal - 1), "col": colVal};
   return algebraicObj;
 }
 
 function placeLetter(board, letter, algebraicNotation){
-
+  var rowPlace = algebraicToRowCol(algebraicNotation);
+  var size = Math.sqrt(board.length);
+  var index = 0;
+  index += size*rowPlace.row;
+  index += rowPlace.col;
+  board.splice(index,index,letter);
 }
 
 function placeLetters(board, letter, algebraicNotation){
