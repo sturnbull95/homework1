@@ -51,7 +51,7 @@ function algebraicToRowCol(algebraicNotation){
   var colNum = algebraicNotation.charAt(0);
   var colVal = alphabet.indexOf(colNum);
   var rowVal = algebraicNotation.charAt(1);
-  var algebraicObj = {"row": (rowVal), "col": colVal};
+  var algebraicObj = {"row": (rowVal-1), "col": colVal};
   return algebraicObj;
 }
 
