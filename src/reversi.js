@@ -36,19 +36,22 @@ function setBoardCell(board, letter, row, col){
 function algebraicToRowCol(algebraicNotation){
   var alphabet = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q",
   "R","S","T","U","V","W","X","Y","Z"];
+  var numbers = ["1", "2","3","4","5","6", "7","8","9","10","11","12","13","14","15",
+  "16","17","18","19","20","21","22","23","24","25","26"];
   if(algebraicNotation.length > 2 || algebraicNotation.length < 2){
     return undefined;
   }
-  if(!algebraicNotation.charAt(0).match(/[A-Z]/i)){
+  if(alphabet.indexOf(algebraicNotation.charAt(0)) == -1){
     return undefined;
   }
-  if(!algebraicNotation.charAt(1).match(/[1-26]/i)){
+  if(numbers.indexOf(algebraicNotation.charAt(1)) == -1){
     return undefined;
   }
+
   var colNum = algebraicNotation.charAt(0);
   var colVal = alphabet.indexOf(colNum);
   var rowVal = algebraicNotation.charAt(1);
-  var algebraicObj = {"row": (rowVal - 1), "col": colVal};
+  var algebraicObj = {"row": (rowVal), "col": colVal};
   return algebraicObj;
 }
 
