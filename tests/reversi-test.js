@@ -83,7 +83,7 @@ describe('reversi', function() {
 
     describe('placeLetter', function() {
         it('places a letter on a board based on algebraic notation move', function() {
-            var board = rev.generateBoard(3, 3, " ");
+            let board = rev.generateBoard(3, 3, " ");
             board = rev.placeLetter(board, 'X', "B2");
             board = rev.placeLetter(board, 'O', "A3");
             expect(board).to.deep.equal([" ", " ", " ", " ", "X", " ", "O", " ", " "]);
