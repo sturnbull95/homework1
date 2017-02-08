@@ -134,13 +134,22 @@ function getCellsToFlip(board, lastRow, lastCol){
   var index = rowColToIndex(board,lastRow,lastCol);
   var size = Math.sqrt(myArr);
   var letter = myArr[index];
+  var sepNorth = [];
+  var sepSouth = [];
+  var sepLeft = [];
+  var sepRight = [];
+  var sepDDL = [];
+  var sepDUL = [];
+  var sepDDR = [];
+  var sepDUR = [];
   //check north
   var placeN = index - size;
   var moveN = lastRow - 1;
   while(moveN > 0 && myArr[placeN] != letter && myArr[placeN] != " "){
     var northArr = [];
     northArr.push(moveN,lastCol);
-    cells.push(northArr);
+    sepNorth.push(northArr)
+    cells.push(sepNorth);
     moveN -= 1;
     placeN -= size;
   }
@@ -150,6 +159,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(moveS < size && myArr[placeS] != letter && myArr[placeS] != " "){
     var southArr = [];
     southArr.push(moveS,lastCol);
+    sepSouth.push(southArr);
     cells.push(southArr);
     moveS += 1;
     placeS += size;
@@ -160,7 +170,8 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(lMove > 0 && myArr[placeL] != letter && myArr[placeL] != " "){
     var leftArr = [];
     leftArr.push(lastRow,lMove);
-    cells.unshift(leftArr);
+    sepLeft.push(leftArr);
+    cells.push(leftArr);
     lMove -= 1;
     placeL -= 1;
   }
@@ -170,7 +181,8 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rMove < size && myArr[placeR] != letter && myArr[placeR] != " "){
     var rightArr = [];
     rightArr.push(lastRow,rMove);
-    cells.unshift(rightArr);
+    sepRight.push(rightArr);
+    cells.push(rightArr);
     rMove += 1;
     placeR += 1;
   }
@@ -181,7 +193,8 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rowUR > 0 && colUR < size && myArr[placeDUR] != letter && myArr[placeDUR] != " "){
     var dURArr = [];
     dURArr.push(rowUR, colUR);
-    cells.unshift(dURArr);
+    sepDUR.push(dURArr);
+    cells.push(dURArr);
     rowUR -= 1;
     colUR += 1;
     placeDUR += 1;
@@ -194,7 +207,8 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rowDR < size && colDR < size && myArr[placeDDR] != letter && myArr[placeDDR] != " "){
     var dDRArr = [];
     dDRArr.push(rowDR, colDR);
-    cells.unshift(dDRArr);
+    sepDDR.push(dDRArr);
+    cells.push(dDRArr);
     rowDR += 1;
     colDR += 1;
     placeDDR += 1;
@@ -207,7 +221,8 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != letter && myArr[placeDDL] != " "){
     var dDLArr = [];
     dDLArr.push(rowDL, colDl);
-    cells.unshift(dDLArr);
+    sepDDL.push(dDLArr);
+    cells.push(dDLArr);
     rowDL += 1;
     colDL -= 1;
     placeDDL -= 1;
@@ -220,7 +235,8 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != letter && myArr[placeDUL] != " "){
     var dULArr = [];
     dULArr.push(rowUL, colUL);
-    cells.unshift(dULArr);
+    sepDDL.push(dULArr);
+    cells.push(dULArr);
     rowUL -= 1;
     colUL -= 1;
     placeDDL -= 1;
