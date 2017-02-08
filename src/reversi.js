@@ -29,10 +29,9 @@ function indexToRowCol(board, i){
 
 function setBoardCell(board, letter, row, col){
   var index = rowColToIndex(board, row, col);
-  console.log(index);
-  var newBoard = board.splice(index,1,letter);
-  console.log(newBoard);
-  return newBoard;
+  board[index] = letter;
+  console.log(board);
+  return board;
 }
 
 // function algebraicToRowCol(algebraicNotation){
@@ -49,14 +48,14 @@ function setBoardCell(board, letter, row, col){
 //   if(numbers.indexOf(algebraicNotation.charAt(1)) == -1){
 //     return undefined;
 //   }
-// 
+//
 //   var colNum = algebraicNotation.charAt(0);
 //   var colVal = alphabet.indexOf(colNum);
 //   var rowVal = algebraicNotation.charAt(1);
 //   var algebraicObj = {"row": (rowVal - 1), "col": colVal};
 //   return algebraicObj;
 // }
-// 
+//
 // function placeLetter(board, letter, algebraicNotation){
 //   var rowPlace = algebraicToRowCol(algebraicNotation);
 //   var size = Math.sqrt(board.length);
@@ -65,15 +64,15 @@ function setBoardCell(board, letter, row, col){
 //   index += rowPlace.col;
 //   board.splice(index,index,letter);
 // }
-// 
+//
 // function placeLetters(board, letter, algebraicNotation){
-// 
+//
 // }
-// 
+//
 // function boardToString(board){
-// 
+//
 // }
-// 
+//
 // function isBoardFull(board){
 //   if(board != undefined){
 //     if(board.indexOf(" ") == -1){
@@ -83,9 +82,9 @@ function setBoardCell(board, letter, row, col){
 //       return false;
 //     }
 //   }
-//   
+//
 // }
-// 
+//
 // function flip(board, row, col){
 //   var index = 0;
 //   var size = Math.sqrt(board.length);
@@ -101,25 +100,25 @@ function setBoardCell(board, letter, row, col){
 //     board.splice(index, 1, 'X');
 //   }
 // }
-// 
+//
 // function flipCells(board, cellsToFlip){
-// 
+//
 // }
-// 
+//
 // function getCellsToFlip(board, lastRow, lastCol){
-// 
+//
 // }
-// 
+//
 // function isValidMove(board, letter, row, col){
 //   var count = 0;
 //   var index = 0;
 //   var size = Math.sqrt(board.length);
 //   index += size * row;
 //   index += col;
-// 
+//
 //     if (board.charAt(index) !== EMPTY)
 //       return count;
-// 
+//
 //     for (var dx = -1; dx <= 1; dx++) {
 //       for (var dy = -1; dy <= 1; dy++) {
 //         if (dx === 0 && dy === 0)
@@ -140,16 +139,16 @@ function setBoardCell(board, letter, row, col){
 //         }
 //       }
 //     }
-// 
+//
 //     return vulnerableCells;
 //   }
-// 
-// 
-// 
+//
+//
+//
 // function isValidMoveAlgebraicNotation(board, letter,algebraicNotation){
-// 
+//
 // }
-// 
+//
 // function getLetterCounts(board){
 //   var x = 0;
 //   var y = 0;
@@ -164,9 +163,9 @@ function setBoardCell(board, letter, row, col){
 //   const count = {"row": x, "col": y};
 //   return count;
 // }
-// 
+//
 // function getValidMoves(board, letter){
-// 
+//
 // }
 
 module.exports = {
