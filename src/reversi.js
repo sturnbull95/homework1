@@ -205,6 +205,7 @@ function getCellsToFlip(board, lastRow, lastCol){
     placeDDL -= 1;
     placeDDL -= size;
   }
+  console.log(cells);
   return cells;
 }
 
