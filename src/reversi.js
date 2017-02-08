@@ -170,38 +170,54 @@ function getCellsToFlip(board, lastRow, lastCol){
     placeR += 1;
   }
   //check diag up/right
-  var placeDUR = index - size + 1;
-  while(placeDUR > 0 && myArr[placeDUR] != letter && myArr[placeDUR] != " "){
+  var rowUR = lastRow - 1;
+  var colUR = lastCol + 1;
+  var placeDUR = rowColToIndex(myArr,rowUR,colUR);
+  while(rowpl > 0 && colpl < size && myArr[placeDUR] != letter && myArr[placeDUR] != " "){
     var dURArr = [];
     dURArr.push(lastRow - size, lastCol + 1);
     cells.push(dURArr);
+    rowUR -= 1;
+    colUR += 1;
     placeDUR += 1;
     placeDUR -= size;
   }
   // check diag down/right
-  var placeDDR = index + size + 1;
-  while(placeDDR < myArr.length && myArr[placeDDR] != letter && myArr[placeDDR] != " "){
+  var rowDR = lastRow + 1;
+  var colDR = lastCol + 1;
+  var placeDUR = rowColToIndex(myArr,rowDR,colDR);
+  while(rowDR < size && colDR < size && myArr[placeDDR] != letter && myArr[placeDDR] != " "){
     var dDRArr = [];
     dDRArr.push(lastRow + size, lastCol + 1);
     cells.push(dDRArr);
+    rowDR += 1;
+    colDR += 1;
     placeDDR += 1;
     placeDDR += size;
   }
   // check diag down/left
-  var placeDDL = index + size - 1;
-  while(placeDDL < myArr.length && myArr[placeDDL] != letter && myArr[placeDDL] != " "){
+  var rowDL = lastRow + 1;
+  var colDL = lastCol - 1;
+  var placeDUR = rowColToIndex(myArr,rowDL,colDL);
+  while(rowDL < size && colDL > 0 && myArr[placeDDL] != letter && myArr[placeDDL] != " "){
     var dDLArr = [];
     dDLArr.push(lastRow + size, lastCol - 1);
     cells.push(dDLArr);
+    rowDL += 1;
+    colDL -= 1;
     placeDDL -= 1;
     placeDDL += size;
   }
   // check diag up/left
-  var placeDUL = index - size - 1;
-  while(placeDUL > 0 && myArr[placeDUL] != letter && myArr[placeDUL] != " "){
+  var rowUL = lastRow - 1;
+  var colUL = lastCol - 1;
+  var placeDUR = rowColToIndex(myArr,rowUL,colUL);
+  while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != letter && myArr[placeDUL] != " "){
     var dULArr = [];
     dULArr.push(lastRow - size, lastCol - 1);
     cells.push(dULArr);
+    rowUL -= 1;
+    colUL -= 1;
     placeDDL -= 1;
     placeDDL -= size;
   }
