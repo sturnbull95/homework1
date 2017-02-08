@@ -153,7 +153,6 @@ function getCellsToFlip(board, lastRow, lastCol){
   //check left
   var placeL = index - 1;
   var lMove = lastCol - 1;
-  var indexOff = index - lastCol;
   while(lMove > 0 && myArr[placeL] != letter && myArr[placeL] != " "){
     var leftArr = [];
     leftArr.push(lastRow,placeL);
@@ -164,11 +163,9 @@ function getCellsToFlip(board, lastRow, lastCol){
   //check right
   var placeR = index + 1;
   var rMove = lastCol + 1;
-  var rightOff = size - lastCol;
-  var indexOff = index + rightOff;
   while(rMove < size && myArr[placeR] != letter && myArr[placeR] != " "){
     var rightArr = [];
-    rightArr.push(lastRow,placeR);
+    rightArr.push(lastRow,rMove);
     cells.push(rightArr);
     rMove += 1;
     placeR += 1;
@@ -179,7 +176,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   var placeDUR = rowColToIndex(myArr,rowUR,colUR);
   while(rowUR > 0 && colUR < size && myArr[placeDUR] != letter && myArr[placeDUR] != " "){
     var dURArr = [];
-    dURArr.push(lastRow, lastCol);
+    dURArr.push(rowUR, colUR);
     cells.push(dURArr);
     rowUR -= 1;
     colUR += 1;
@@ -192,7 +189,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   var placeDDR = rowColToIndex(myArr,rowDR,colDR);
   while(rowDR < size && colDR < size && myArr[placeDDR] != letter && myArr[placeDDR] != " "){
     var dDRArr = [];
-    dDRArr.push(lastRow, lastCol);
+    dDRArr.push(rowDR, colDR);
     cells.push(dDRArr);
     rowDR += 1;
     colDR += 1;
@@ -205,7 +202,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   var placeDDL = rowColToIndex(myArr,rowDL,colDL);
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != letter && myArr[placeDDL] != " "){
     var dDLArr = [];
-    dDLArr.push(lastRow, lastCol);
+    dDLArr.push(rowDL, colDl);
     cells.push(dDLArr);
     rowDL += 1;
     colDL -= 1;
@@ -218,7 +215,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   var placeDUL = rowColToIndex(myArr,rowUL,colUL);
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != letter && myArr[placeDUL] != " "){
     var dULArr = [];
-    dULArr.push(lastRow, lastCol);
+    dULArr.push(rowUL, colUL);
     cells.push(dULArr);
     rowUL -= 1;
     colUL -= 1;
