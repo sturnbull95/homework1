@@ -281,7 +281,7 @@ function isValidMove(board, letter, row, col){
   var moveN = row - 1;
   while(moveN > 0 && myArr[placeN] != " "){
     var northArr = [];
-    northArr.push(moveN,lastCol);
+    northArr.push(moveN,col);
     sepNorth.push(northArr);
     if(myArr[placeN] == letter){
       cells.push(sepNorth);
@@ -294,7 +294,7 @@ function isValidMove(board, letter, row, col){
   var moveS = row + 1;
   while(moveS < size && myArr[placeS] != " "){
     var southArr = [];
-    southArr.push(moveS,lastCol);
+    southArr.push(moveS,col);
     sepSouth.push(southArr);
     if(myArr[placeS] == letter){
       cells.push(sepSouth);
@@ -307,7 +307,7 @@ function isValidMove(board, letter, row, col){
   var lMove = col - 1;
   while(lMove > 0 && myArr[placeL] != " "){
     var leftArr = [];
-    leftArr.push(lastRow,lMove);
+    leftArr.push(row,lMove);
     sepLeft.push(leftArr);
     if(myArr[placeL] == letter){
       cells.push(sepLeft);
@@ -320,7 +320,7 @@ function isValidMove(board, letter, row, col){
   var rMove = col + 1;
   while(rMove < size && myArr[placeR] != " "){
     var rightArr = [];
-    rightArr.push(lastRow,rMove);
+    rightArr.push(row,rMove);
     sepRight.push(rightArr);
     if(myArr[placeR] == letter){
       cells.push(sepRight);
