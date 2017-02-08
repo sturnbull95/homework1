@@ -438,6 +438,8 @@ function getLetterCounts(board){
       y += 1;
     }
   }
+  console.log(x);
+  console.log(y);
   const count = {"row": x, "col": y};
   return count;
 }
@@ -462,6 +464,7 @@ module.exports = {
     getCellsToFlip: getCellsToFlip,
     isValidMove: isValidMove,
     isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
-    getLetterCounts: getLetterCounts,
+    getLetterCounts: getLetterCounts
     // getValidMoves: getValidMoves
 }
+
