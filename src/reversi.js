@@ -430,11 +430,11 @@ function getLetterCounts(board){
   var x = 0;
   var y = 0;
   var myArr = board.slice();
-  for(var i = 0; i < board.length; i++){
-    if(board[i] === "X"){
+  for(var i = 0; i < myArr.length; i++){
+    if(myArr[i] === "X"){
       x += 1;
     }
-    if(board[i] === "O"){
+    if(myArr[i] === "O"){
       y += 1;
     }
   }
