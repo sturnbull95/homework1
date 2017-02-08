@@ -475,6 +475,6 @@ module.exports = {
     getCellsToFlip: getCellsToFlip,
     isValidMove: isValidMove,
     isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
-    getLetterCounts: getLetterCounts
+    getLetterCounts: getLetterCounts,
     getValidMoves: getValidMoves
 }
