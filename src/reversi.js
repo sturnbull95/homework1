@@ -161,15 +161,15 @@ function getCellsToFlip(board, lastRow, lastCol){
     placeL -= 1;
   }
   //check right
-  var placeR = index + 1;
-  var rMove = lastCol + 1;
-  while(rMove < size && myArr[placeR] != letter && myArr[placeR] != " "){
-    var rightArr = [];
-    rightArr.push(lastRow,rMove);
-    cells.push(rightArr);
-    rMove += 1;
-    placeR += 1;
-  }
+  // var placeR = index + 1;
+  // var rMove = lastCol + 1;
+  // while(rMove < size && myArr[placeR] != letter && myArr[placeR] != " "){
+  //   var rightArr = [];
+  //   rightArr.push(lastRow,rMove);
+  //   cells.push(rightArr);
+  //   rMove += 1;
+  //   placeR += 1;
+  // }
   //check diag up/right
   var rowUR = lastRow - 1;
   var colUR = lastCol + 1;
