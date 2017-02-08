@@ -81,6 +81,7 @@ function isBoardFull(board){
       return false;
     }
   }
+  
 }
 
 function flip(board, row, col){
@@ -88,6 +89,9 @@ function flip(board, row, col){
   var size = Math.sqrt(board.length);
   index += size * row;
   index += col;
+  if(board.charAt(index) === " "){
+    break;
+  }
   if(board.charAt(index) === "X"){
     board.splice(index, 1, 'O');
   }
