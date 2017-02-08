@@ -56,14 +56,15 @@ function algebraicToRowCol(algebraicNotation){
   return algebraicObj;
 }
 
-// function placeLetter(board, letter, algebraicNotation){
-//   var rowPlace = algebraicToRowCol(algebraicNotation);
-//   var size = Math.sqrt(board.length);
-//   var index = 0;
-//   index += size*rowPlace.row;
-//   index += rowPlace.col;
-//   board.splice(index,index,letter);
-// }
+function placeLetter(board, letter, algebraicNotation){
+  var rowPlace = algebraicToRowCol(algebraicNotation);
+  var size = Math.sqrt(board.length);
+  var index = 0;
+  var newArr = board.slice();
+  index += size*rowPlace.row;
+  index += rowPlace.col;
+  newArr[index] = letter;
+}
 //
 // function placeLetters(board, letter, algebraicNotation){
 //
@@ -175,7 +176,7 @@ module.exports = {
     indexToRowCol: indexToRowCol,
     setBoardCell: setBoardCell,
     algebraicToRowCol: algebraicToRowCol,
-    // placeLetter: placeLetter,
+    placeLetter: placeLetter,
     // placeLetters: placeLetters,
     // boardToString: boardToString,
     // isBoardFull: isBoardFull,
