@@ -69,15 +69,29 @@ function placeLetters(board, letter, algebraicNotation){
 }
 
 function boardToString(board){
-
+  
 }
 
 function isBoardFull(board){
-
+  if(board.indexOf(" ") == -1){
+    return true;
+  }
+  else{
+    return false;
+  }
 }
 
 function flip(board, row, col){
-
+  var index = 0;
+  var size = Math.sqrt(board.length);
+  index += size * row;
+  index += col;
+  if(board.charAt(index) === "X"){
+    board.splice(index, 1, 'O');
+  }
+  if(board.charAt(index) === "O"){
+    board.splice(index, 1, 'X');
+  }
 }
 
 function flipCells(board, cellsToFlip){
@@ -89,15 +103,58 @@ function getCellsToFlip(board, lastRow, lastCol){
 }
 
 function isValidMove(board, letter, row, col){
+  var count = 0;
+  var index = 0;
+  var size = Math.sqrt(board.length);
+  index += size * row;
+  index += col;
 
-}
+    if (board.charAt(index) !== EMPTY)
+      return count;
+
+    for (var dx = -1; dx <= 1; dx++) {
+      for (var dy = -1; dy <= 1; dy++) {
+        if (dx === 0 && dy === 0)
+          continue;
+        for (var i = 1; i < N; i++) {
+          var nx = x + i * dx;
+          var ny = y + i * dy;
+          if (nx < 0 || N <= nx || ny < 0 || N <= ny)
+            break;
+          var cell = board[ix(nx, ny)];
+          if (cell === player && 2 <= i) {
+            for (var j = 1; j < i; j++)
+              vulnerableCells.push(ix(x + j * dx, y + j * dy));
+            break;
+          }
+          if (cell !== opponent)
+            break;
+        }
+      }
+    }
+
+    return vulnerableCells;
+  }
+
+
 
 function isValidMoveAlgebraicNotation(board, letter,algebraicNotation){
 
 }
 
 function getLetterCounts(board){
-
+  var x = 0;
+  var y = 0;
+  for(var i = 0; i < board.length; i++){
+    if(board.charAt(i) === "X"){
+      x += 1;
+    }
+    if(board.charAt(i) === "O"){
+      y += 1;
+    }
+  }
+  const count = {"row": x, "col": y};
+  return count;
 }
 
 function getValidMoves(board, letter){
