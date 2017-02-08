@@ -101,6 +101,7 @@ function flip(board, row, col){
   if(thisArr[index] == "O"){
     thisArr[index] = "X";
   }
+  return thisArr;
 }
 //
 // function flipCells(board, cellsToFlip){
