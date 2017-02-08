@@ -80,7 +80,7 @@ function placeLetter(board, letter, algebraicNotation){
 // }
 //
 function isBoardFull(board){
-  
+
     if(board.indexOf(" ") == -1){
       return true;
     }
@@ -103,11 +103,26 @@ function flip(board, row, col){
   }
   return thisArr;
 }
-//
-// function flipCells(board, cellsToFlip){
-//
-// }
-//
+
+function flipCells(board, cellsToFlip){
+  var myArr = board.slice();
+  for(var i = 0; i < cellsToFlip.length;i++){
+    for(var x = 0; x < cellsToFlip[i].length; x++){
+      var index = rowColToIndex(myArr,cellsToFlip[x]);
+      if(myArr[index] == " "){
+        return thisArr;
+      }
+      if(myArr[index] === "X"){
+        thisArr[index] = "O";
+      }
+      else{
+        myArr[index] = "X";
+      }
+    }
+  }
+  return myArr;
+}
+
 // function getCellsToFlip(board, lastRow, lastCol){
 //
 // }
@@ -182,8 +197,8 @@ module.exports = {
     //placeLetters: placeLetters,
     // boardToString: boardToString,
     isBoardFull: isBoardFull,
-    flip: flip
-    // flipCells: flipCells,
+    flip: flip,
+    flipCells: flipCells,
     // getCellsToFlip: getCellsToFlip,
     // isValidMove: isValidMove,
     // isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
