@@ -304,7 +304,8 @@ describe('reversi', function() {
                 if(line.length === 1) {
                     expect(line).to.deep.equal([[1, 3]])
                 } else if(line.length === 2) {
-                    expect(line).to.deep.include.members([[2, 1], [2, 2]]);
+		    expect(line).to.deep.include.members([[2, 1], [1, 2]]);
+                    //expect(line).to.deep.include.members([[2, 1], [2, 2]]);
                     //expect(line).to.deep.include.members([[2, 1], [3, 1]]);
                 }
             });
