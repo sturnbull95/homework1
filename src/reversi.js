@@ -113,16 +113,7 @@ function flipCells(board, cellsToFlip){
   var myArr = board.slice();
   for(var i = 0; i < cellsToFlip.length;i++){
     for(var x = 0; x < cellsToFlip[i].length; x++){
-      var index = rowColToIndex(myArr,cellsToFlip[i][x][0],cellsToFlip[i][x][1]);
-      if(myArr[index] == " "){
-        return thisArr;
-      }
-      if(myArr[index] === "X"){
-        myArr[index] = "O";
-      }
-      else{
-        myArr[index] = "X";
-      }
+      flip(myArr,cellsToFlip[i][x][0],cellsToFlip[1]);
     }
   }
   return myArr;
