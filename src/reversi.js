@@ -177,7 +177,7 @@ module.exports = {
     indexToRowCol: indexToRowCol,
     setBoardCell: setBoardCell,
     algebraicToRowCol: algebraicToRowCol,
-    // placeLetter: placeLetter,
+    placeLetter: placeLetter,
     // placeLetters: placeLetters,
     // boardToString: boardToString,
     // isBoardFull: isBoardFull,
