@@ -476,5 +476,5 @@ module.exports = {
     isValidMove: isValidMove,
     isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
     getLetterCounts: getLetterCounts
-    // getValidMoves: getValidMoves
+    getValidMoves: getValidMoves
 }
