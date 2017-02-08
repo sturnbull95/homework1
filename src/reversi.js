@@ -272,6 +272,10 @@ function getCellsToFlip(board, lastRow, lastCol){
 function isValidMove(board, letter, row, col){
   var newBoard = board.slice();
   var myArr = getCellsToFlip(newBoard,row,col);
+  var index = rowColToIndex(board, row, col);
+  if(index > newBoard.length || index < 0){
+    return false;
+  }
   if(myArr.length == 0){
     return false;
   }
