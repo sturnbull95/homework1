@@ -70,6 +70,7 @@ function placeLetter(board, letter, algebraicNotation){
 function placeLetters(board, letter, algebraicNotation){
   var myArr = board.slice();
   for(var i = 2; i < arguments.length; i++){
+    console.log(arguments[i]);
     placeLetter(myArr,letter,arguments[i]);
   }
   return myArr;
