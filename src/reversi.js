@@ -400,12 +400,12 @@ function isValidMove(board, letter, row, col){
   }
   
   if(cells.length == 0){
+    console.log(cells.length);
     return false;
   }
   else{
     return true;
   }
-  console.log(cells.length);
   }
 
 
