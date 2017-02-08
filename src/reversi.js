@@ -248,9 +248,6 @@ function getCellsToFlip(board, lastRow, lastCol){
 function isValidMove(board, letter, row, col){
   var myArr = getCellsToFlip(board,row,col);
   var index = rowColToIndex(board, row, col);
-  if(myArr[index] == " "){
-    return false;
-  }
   if(myArr.length == 0){
     return false;
   }
@@ -264,6 +261,10 @@ function isValidMove(board, letter, row, col){
 function isValidMoveAlgebraicNotation(board, letter,algebraicNotation){
   var obj = algebraicToRowCol(algebraicNotation);
   var myArr = getCellsToFlip(board, obj.row,obj.col);
+  var index = rowColToIndex(board, obj.row, obj.col);
+  if(myArr[index] != " "){
+    return false;
+  }
   if(myArr.length == 0){
     return false;
   }
