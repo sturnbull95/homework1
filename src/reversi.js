@@ -399,7 +399,7 @@ function isValidMove(board, letter, row, col){
   if(index > myArr.length || index < 0){
     return false;
   }
-  if(myArr.length == 0){
+  if(cells.length == 0){
     return false;
   }
   else{
