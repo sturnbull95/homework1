@@ -129,7 +129,7 @@ function flipCells(board, cellsToFlip){
 }
 
 function getCellsToFlip(board, lastRow, lastCol){
-  var cells = [];
+  var cells = [][];
   var myArr = board.slice();
   var index = rowColToIndex(board,lastRow,lastCol);
   var size = Math.sqrt(myArr);
@@ -171,7 +171,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   }
   //check diag up/right
   var placeDUR = index - size + 1;
-  while(placeDUR > 0; && myArr[placeDUR] !+ letter && myArr[placeDUR] != " "){
+  while(placeDUR > 0 && myArr[placeDUR] !+ letter && myArr[placeDUR] != " "){
     var dURArr = [];
     dURArr.push(lastRow - size, lastCol + 1);
     cells.push(dURArr);
@@ -180,7 +180,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   }
   // check diag down/right
   var placeDDR = index + size + 1;
-  while(placeDDR < myArr.length; && myArr[placeDDR] !+ letter && myArr[placeDDR] != " "){
+  while(placeDDR < myArr.length && myArr[placeDDR] !+ letter && myArr[placeDDR] != " "){
     var dDRArr = [];
     dDRArr.push(lastRow + size, lastCol + 1);
     cells.push(dDRArr);
@@ -189,7 +189,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   }
   // check diag down/left
   var placeDDL = index + size - 1;
-  while(placeDDL < myArr.length; && myArr[placeDDL] !+ letter && myArr[placeDDL] != " "){
+  while(placeDDL < myArr.length && myArr[placeDDL] !+ letter && myArr[placeDDL] != " "){
     var dDLArr = [];
     dDLArr.push(lastRow + size, lastCol - 1);
     cells.push(dDLArr);
@@ -198,7 +198,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   }
   // check diag up/left
   var placeDUL = index - size - 1;
-  while(placeDUL > 0; && myArr[placeDUL] !+ letter && myArr[placeDUL] != " "){
+  while(placeDUL > 0 && myArr[placeDUL] !+ letter && myArr[placeDUL] != " "){
     var dULArr = [];
     dULArr.push(lastRow - size, lastCol - 1);
     cells.push(dULArr);
@@ -280,7 +280,7 @@ module.exports = {
     isBoardFull: isBoardFull,
     flip: flip,
     flipCells: flipCells,
-    getCellsToFlip: getCellsToFlip,
+    // getCellsToFlip: getCellsToFlip,
     // isValidMove: isValidMove,
     // isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
     // getLetterCounts: getLetterCounts,
