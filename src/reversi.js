@@ -171,7 +171,7 @@ function getCellsToFlip(board, lastRow, lastCol){
     var leftArr = [];
     leftArr.push(lastRow,lMove);
     sepLeft.push(leftArr);
-    cells.push(leftArr);
+    cells.push(sepLeft);
     lMove -= 1;
     placeL -= 1;
   }
