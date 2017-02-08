@@ -129,7 +129,7 @@ function flipCells(board, cellsToFlip){
 }
 
 function getCellsToFlip(board, lastRow, lastCol){
-  var cells = [][];
+  var cells = [];
   var myArr = board.slice();
   var index = rowColToIndex(board,lastRow,lastCol);
   var size = Math.sqrt(myArr);
