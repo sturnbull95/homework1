@@ -242,7 +242,6 @@ function getCellsToFlip(board, lastRow, lastCol){
     placeDDL -= 1;
     placeDDL -= size;
   }
-  console.log(cells);
   return cells;
 }
 
@@ -302,8 +301,8 @@ module.exports = {
     flip: flip,
     flipCells: flipCells,
     getCellsToFlip: getCellsToFlip,
-    // isValidMove: isValidMove,
-    // isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
+    isValidMove: isValidMove,
+    isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
     // getLetterCounts: getLetterCounts,
     // getValidMoves: getValidMoves
 }
