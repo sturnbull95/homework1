@@ -93,8 +93,8 @@ function flip(board, row, col){
   var thisArr = board.slice();
   var size = Math.sqrt(board.length);
   var index = 0;
-  index += size * rowNumber;
-  index += colNumber;
+  index += size * row;
+  index += col;
   if(thisArr[index] == " "){
     thisArr[index] = " ";
   }
