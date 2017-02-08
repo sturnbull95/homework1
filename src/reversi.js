@@ -180,7 +180,7 @@ module.exports = {
     placeLetters: placeLetters,
     // boardToString: boardToString,
     isBoardFull: isBoardFull,
-    //flip: flip,
+    flip: flip,
     // flipCells: flipCells,
     // getCellsToFlip: getCellsToFlip,
     // isValidMove: isValidMove,
