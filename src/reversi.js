@@ -278,7 +278,7 @@ function isValidMove(board, letter, row, col){
 
   //check north
   var placeN = index - size;
-  var moveN = lastRow - 1;
+  var moveN = row - 1;
   while(moveN > 0 && myArr[placeN] != " "){
     var northArr = [];
     northArr.push(moveN,lastCol);
@@ -291,7 +291,7 @@ function isValidMove(board, letter, row, col){
   }
   // check south
   var placeS = index + size;
-  var moveS = lastRow + 1;
+  var moveS = row + 1;
   while(moveS < size && myArr[placeS] != " "){
     var southArr = [];
     southArr.push(moveS,lastCol);
@@ -304,7 +304,7 @@ function isValidMove(board, letter, row, col){
   }
   //check left
   var placeL = index - 1;
-  var lMove = lastCol - 1;
+  var lMove = col - 1;
   while(lMove > 0 && myArr[placeL] != " "){
     var leftArr = [];
     leftArr.push(lastRow,lMove);
@@ -317,7 +317,7 @@ function isValidMove(board, letter, row, col){
   }
   //check right
   var placeR = index + 1;
-  var rMove = lastCol + 1;
+  var rMove = col + 1;
   while(rMove < size && myArr[placeR] != " "){
     var rightArr = [];
     rightArr.push(lastRow,rMove);
@@ -329,8 +329,8 @@ function isValidMove(board, letter, row, col){
     placeR += 1;
   }
   //check diag up/right
-  var rowUR = lastRow - 1;
-  var colUR = lastCol + 1;
+  var rowUR = row - 1;
+  var colUR = col + 1;
   var placeDUR = rowColToIndex(myArr,rowUR,colUR);
   while(rowUR > 0 && colUR < size && myArr[placeDUR] != " "){
     var dURArr = [];
@@ -345,8 +345,8 @@ function isValidMove(board, letter, row, col){
     placeDUR -= size;
   }
   // check diag down/right
-  var rowDR = lastRow + 1;
-  var colDR = lastCol + 1;
+  var rowDR = row + 1;
+  var colDR = col + 1;
   var placeDDR = rowColToIndex(myArr,rowDR,colDR);
   while(rowDR < size && colDR < size && myArr[placeDDR] != " "){
     var dDRArr = [];
@@ -361,8 +361,8 @@ function isValidMove(board, letter, row, col){
     placeDDR += size;
   }
   // check diag down/left
-  var rowDL = lastRow + 1;
-  var colDL = lastCol - 1;
+  var rowDL = row + 1;
+  var colDL = col - 1;
   var placeDDL = rowColToIndex(myArr,rowDL,colDL);
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != " "){
     var dDLArr = [];
@@ -377,8 +377,8 @@ function isValidMove(board, letter, row, col){
     placeDDL += size;
   }
   // check diag up/left
-  var rowUL = lastRow - 1;
-  var colUL = lastCol - 1;
+  var rowUL = row - 1;
+  var colUL = col - 1;
   var placeDUL = rowColToIndex(myArr,rowUL,colUL);
   var letterDUL = myArr[index];
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != " "){
