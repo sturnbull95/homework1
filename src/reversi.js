@@ -299,9 +299,6 @@ function isValidMoveAlgebraicNotation(board, letter,algebraicNotation){
   if(index > newBoard.length){
     return false;
   }
-  if(myArr.length == 0){
-    return false;
-  }
   else{
     return true;
   }
