@@ -67,13 +67,13 @@ function placeLetter(board, letter, algebraicNotation){
   return newArr;
 }
 
-// function placeLetters(board, letter, algebraicNotation){
-//   var myArr = board.slice();
-//   for(var i = 2; i < arguments.length; i++){
-//     placeLetter(myArr,letter,arguments[i]);
-//   }
-//   return myArr;
-// }
+function placeLetters(board, letter, algebraicNotation){
+  var myArr = board.slice();
+  for(var i = 2; i < arguments.length; i++){
+    placeLetter(myArr,letter,arguments[i]);
+  }
+  return myArr;
+}
 
 // function boardToString(board){
 //
@@ -90,18 +90,15 @@ function isBoardFull(board){
   }
 
 function flip(board, row, col){
-  var index = 0;
-  var size = Math.sqrt(board.length);
-  index += size * row;
-  index += col;
-  if(board.charAt(index) === " "){
-    board.splice(index,1," ");
+  var index = rowColToIndex(board,row,col);
+  if(board[index] === " "){
+    board[index] = " ";
   }
-  if(board.charAt(index) === "X"){
-    board.splice(index, 1, 'O');
+  if(board[index] === "X"){
+    board[index] = "O";
   }
-  if(board.charAt(index) === "O"){
-    board.splice(index, 1, 'X');
+  if(board[index] === "O"){
+    board[index] = "X";
   }
 }
 //
@@ -180,10 +177,10 @@ module.exports = {
     setBoardCell: setBoardCell,
     algebraicToRowCol: algebraicToRowCol,
     placeLetter: placeLetter,
-    //placeLetters: placeLetters,
+    placeLetters: placeLetters,
     // boardToString: boardToString,
     isBoardFull: isBoardFull,
-    flip: flip,
+    //flip: flip,
     // flipCells: flipCells,
     // getCellsToFlip: getCellsToFlip,
     // isValidMove: isValidMove,
