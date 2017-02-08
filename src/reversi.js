@@ -247,6 +247,10 @@ function getCellsToFlip(board, lastRow, lastCol){
 
 function isValidMove(board, letter, row, col){
   var myArr = getCellsToFlip(board,row,col);
+  var index = rowColToIndex(board, row, col);
+  if(myArr[index] == " "){
+    return false;
+  }
   if(myArr.length == 0){
     return false;
   }
@@ -302,7 +306,7 @@ module.exports = {
     flipCells: flipCells,
     getCellsToFlip: getCellsToFlip,
     isValidMove: isValidMove,
-    isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
+    isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation
     // getLetterCounts: getLetterCounts,
     // getValidMoves: getValidMoves
 }
