@@ -92,14 +92,13 @@ function isBoardFull(board){
 function flip(board, row, col){
   var thisArr = board.slice();
   var index = rowColToIndex(thisArr,row,col);
-  console.log(thisArr[index]);
   if(thisArr[index] == " "){
-    thisArr[index] = " ";
+    return thisArr;
   }
-  if(thisArr[index] === "X"){
+  elseif(thisArr[index] === "X"){
     thisArr[index] = "O";
   }
-  if(thisArr[index] === "O"){
+  else{
     thisArr[index] = "X";
   }
   return thisArr;
