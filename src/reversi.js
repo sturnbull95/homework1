@@ -398,12 +398,14 @@ function isValidMove(board, letter, row, col){
   if(index > myArr.length || index < 0){
     return false;
   }
+  
   if(cells.length == 0){
     return false;
   }
   else{
     return true;
   }
+  console.log(cells.length);
   }
 
 
