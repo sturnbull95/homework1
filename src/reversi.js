@@ -179,7 +179,7 @@ function getCellsToFlip(board, lastRow, lastCol){
     var leftArr = [];
     leftArr.push(lastRow,lMove);
     sepLeft.push(leftArr);
-    if(myArr[placeL] == letter){
+    if(myArr[placeL] == letterL){
       cells.push(sepLeft);
       break;
     }
