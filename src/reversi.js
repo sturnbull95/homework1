@@ -73,11 +73,13 @@ function boardToString(board){
 }
 
 function isBoardFull(board){
-  if(board.indexOf(" ") == -1){
-    return true;
-  }
-  else{
-    return false;
+  if(board != undefined){}
+    if(board.indexOf(" ") == -1){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 }
 
