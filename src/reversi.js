@@ -69,7 +69,6 @@ function placeLetter(board, letter, algebraicNotation){
 
 function placeLetters(board, letter, algebraicNotation){
   var myArr = board.slice();
-  console.log(arguments.length);
   for(var i = 2; i < arguments.length; i++){
     placeLetter(myArr,letter,arguments[i]);
   }
@@ -91,16 +90,16 @@ function isBoardFull(board){
   }
 
 function flip(board, row, col){
-  var myArr = board.slice();
-  var index = rowColToIndex(myArr,row,col);
-  if(myArr[index] == " "){
-    myArr[index] = " ";
+  var thisArr = board.slice();
+  var index = rowColToIndex(thisArr,row,col);
+  if(thisArr[index] == " "){
+    thisArr[index] = " ";
   }
-  if(myArr[index] == "X"){
-    myArr[index] = "O";
+  if(thisArr[index] == "X"){
+    thisArr[index] = "O";
   }
-  if(myArr[index] == "O"){
-    myArr[index] = "X";
+  if(thisArr[index] == "O"){
+    thisArr[index] = "X";
   }
 }
 //
