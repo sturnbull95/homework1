@@ -152,21 +152,25 @@ function getCellsToFlip(board, lastRow, lastCol){
   }
   //check left
   var placeL = index - 1;
+  var lMove = lastCol - 1;
   var indexOff = index - lastCol;
-  while(placeL > indexOff && myArr[placeL] != letter && myArr[placeL] != " "){
+  while(lMove > 0 && myArr[placeL] != letter && myArr[placeL] != " "){
     var leftArr = [];
     leftArr.push(lastRow,placeL);
     cells.push(leftArr);
+    lMove -= 1;
     placeL -= 1;
   }
   //check right
   var placeR = index + 1;
+  var rMove = lastCol + 1;
   var rightOff = size - lastCol;
   var indexOff = index + rightOff;
-  while(placeR < indexOff && myArr[placeR] != letter && myArr[placeR] != " "){
+  while(rMove < size && myArr[placeR] != letter && myArr[placeR] != " "){
     var rightArr = [];
     rightArr.push(lastRow,placeR);
     cells.push(rightArr);
+    rMove += 1;
     placeR += 1;
   }
   //check diag up/right
