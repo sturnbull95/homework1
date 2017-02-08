@@ -29,7 +29,7 @@ function indexToRowCol(board, i){
 
 function setBoardCell(board, letter, row, col){
   var index = rowColToIndex(board, row, col);
-  var newBoard.splice(index,1,letter);
+  var newBoard = board.splice(index,1,letter);
   console.log(newBoard);
   return newBoard;
 }
