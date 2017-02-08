@@ -276,6 +276,8 @@ function isValidMove(board, letter, row, col){
   if(index > newBoard.length || index < 0){
     return false;
   }
+  console.log(myArr.length);
+  console.log(myArr);
   if(myArr.length == 0){
     return false;
   }
