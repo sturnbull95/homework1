@@ -280,7 +280,7 @@ module.exports = {
     isBoardFull: isBoardFull,
     flip: flip,
     flipCells: flipCells,
-    // getCellsToFlip: getCellsToFlip,
+    getCellsToFlip: getCellsToFlip,
     // isValidMove: isValidMove,
     // isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
     // getLetterCounts: getLetterCounts,
