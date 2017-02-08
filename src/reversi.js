@@ -150,7 +150,7 @@ function getCellsToFlip(board, lastRow, lastCol){
     cells.push(southArr);
     placeS += size;
   }
-  check left
+  //check left
   var placeL = index - 1;
   var lMove = lastCol - 1;
   while(lMove > 0 && myArr[placeL] != letter && myArr[placeL] != " "){
