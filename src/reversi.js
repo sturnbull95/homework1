@@ -37,8 +37,6 @@ function setBoardCell(board, letter, row, col){
 function algebraicToRowCol(algebraicNotation){
   var alphabet = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q",
   "R","S","T","U","V","W","X","Y","Z"];
-  var numbers = ["1", "2","3","4","5","6", "7","8","9","10","11","12","13","14","15",
-  "16","17","18","19","20","21","22","23","24","25","26"];
   if(algebraicNotation.length > 2 || algebraicNotation.length < 2){
     return undefined;
   }
@@ -61,8 +59,8 @@ function placeLetter(board, letter, algebraicNotation){
   var size = Math.sqrt(board.length);
   var index = 0;
   var newArr = board.slice();
-  index += size*rowPlace.row;
-  index += rowPlace.col;
+  index += rowPlace.row;
+  index += size*rowPlace.col;
   newArr[index] = letter;
   return newArr;
 }
