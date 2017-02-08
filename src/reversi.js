@@ -197,8 +197,8 @@ module.exports = {
     //placeLetters: placeLetters,
     // boardToString: boardToString,
     isBoardFull: isBoardFull,
-    flip: flip,
-    flipCells: flipCells,
+    flip: flip
+    // flipCells: flipCells,
     // getCellsToFlip: getCellsToFlip,
     // isValidMove: isValidMove,
     // isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation,
