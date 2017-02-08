@@ -295,7 +295,7 @@ describe('reversi', function() {
             let board = rev.generateBoard(4, 4, " ");
             board = rev.placeLetters(board, 'O', 'B3', 'C3', 'D2');
             board = rev.placeLetters(board, 'X', 'A3', 'D1', 'D3');
-            const res = rev.getCellsToFlip(board, 0, 3);
+            const res = rev.getCellsToFlip(board, 2, 3);
             // since we don't know what order these groups will be in...
             // we'll just make sure that each inner array is either 1 or 2 
             // elements long, and then test for membership
@@ -304,8 +304,8 @@ describe('reversi', function() {
                 if(line.length === 1) {
                     expect(line).to.deep.equal([[1, 3]])
                 } else if(line.length === 2) {
-                    // expect(line).to.deep.include.members([[2, 1], [2, 2]]);
-                    expect(line).to.deep.include.members([[2, 1], [3, 1]]);
+                    expect(line).to.deep.include.members([[2, 1], [2, 2]]);
+                    //expect(line).to.deep.include.members([[2, 1], [3, 1]]);
                 }
             });
         });
