@@ -136,18 +136,22 @@ function getCellsToFlip(board, lastRow, lastCol){
   var letter = myArr[index];
   //check north
   var placeN = index - size;
-  while(placeN > 0 && myArr[placeN] != letter && myArr[placeN] != " "){
+  var moveN = lastRow - 1;
+  while(moveN > 0 && myArr[placeN] != letter && myArr[placeN] != " "){
     var northArr = [];
-    northArr.push(placeN,lastCol);
+    northArr.push(moveN,lastCol);
     cells.push(northArr);
+    moveN -= 1;
     placeN -= size;
   }
   // check south
   var placeS = index + size ;
-  while(placeS < myArr.length && myArr[placeS] != letter && myArr[placeS] != " "){
+  var moveS = lastRow + 1;
+  while(moveS < size && myArr[placeS] != letter && myArr[placeS] != " "){
     var southArr = [];
-    southArr.push(placeS,lastCol);
+    southArr.push(moveS,lastCol);
     cells.push(southArr);
+    moveS += 1;
     placeS += size;
   }
   //check left
@@ -166,7 +170,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rMove < size && myArr[placeR] != letter && myArr[placeR] != " "){
     var rightArr = [];
     rightArr.push(lastRow,rMove);
-    cells.push(rightArr);
+    cells.unshift(rightArr);
     rMove += 1;
     placeR += 1;
   }
@@ -177,7 +181,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rowUR > 0 && colUR < size && myArr[placeDUR] != letter && myArr[placeDUR] != " "){
     var dURArr = [];
     dURArr.push(rowUR, colUR);
-    cells.push(dURArr);
+    cells.unshift(dURArr);
     rowUR -= 1;
     colUR += 1;
     placeDUR += 1;
@@ -190,7 +194,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rowDR < size && colDR < size && myArr[placeDDR] != letter && myArr[placeDDR] != " "){
     var dDRArr = [];
     dDRArr.push(rowDR, colDR);
-    cells.push(dDRArr);
+    cells.unshift(dDRArr);
     rowDR += 1;
     colDR += 1;
     placeDDR += 1;
@@ -203,7 +207,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != letter && myArr[placeDDL] != " "){
     var dDLArr = [];
     dDLArr.push(rowDL, colDl);
-    cells.push(dDLArr);
+    cells.unshift(dDLArr);
     rowDL += 1;
     colDL -= 1;
     placeDDL -= 1;
@@ -216,7 +220,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != letter && myArr[placeDUL] != " "){
     var dULArr = [];
     dULArr.push(rowUL, colUL);
-    cells.push(dULArr);
+    cells.unshift(dULArr);
     rowUL -= 1;
     colUL -= 1;
     placeDDL -= 1;
@@ -226,46 +230,29 @@ function getCellsToFlip(board, lastRow, lastCol){
   return cells;
 }
 
-// function isValidMove(board, letter, row, col){
-//   var count = 0;
-//   var index = 0;
-//   var size = Math.sqrt(board.length);
-//   index += size * row;
-//   index += col;
-//
-//     if (board.charAt(index) !== EMPTY)
-//       return count;
-//
-//     for (var dx = -1; dx <= 1; dx++) {
-//       for (var dy = -1; dy <= 1; dy++) {
-//         if (dx === 0 && dy === 0)
-//           continue;
-//         for (var i = 1; i < N; i++) {
-//           var nx = x + i * dx;
-//           var ny = y + i * dy;
-//           if (nx < 0 || N <= nx || ny < 0 || N <= ny)
-//             break;
-//           var cell = board[ix(nx, ny)];
-//           if (cell === player && 2 <= i) {
-//             for (var j = 1; j < i; j++)
-//               vulnerableCells.push(ix(x + j * dx, y + j * dy));
-//             break;
-//           }
-//           if (cell !== opponent)
-//             break;
-//         }
-//       }
-//     }
-//
-//     return vulnerableCells;
-//   }
-//
-//
-//
-// function isValidMoveAlgebraicNotation(board, letter,algebraicNotation){
-//
-// }
-//
+function isValidMove(board, letter, row, col){
+  var myArr = getCellsToFlip(board,row,col);
+  if(myArr.length == 0){
+    return false;
+  }
+  else{
+    return true;
+  }
+  }
+
+
+
+function isValidMoveAlgebraicNotation(board, letter,algebraicNotation){
+  var obj = algebraicToRowCol(algebraicNotation);
+  var myArr = getCellsToFlip(board, obj.row,obj.col);
+  if(myArr.length == 0){
+    return false;
+  }
+  else{
+    return true;
+  }
+}
+
 // function getLetterCounts(board){
 //   var x = 0;
 //   var y = 0;
