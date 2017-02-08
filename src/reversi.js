@@ -444,9 +444,20 @@ function getLetterCounts(board){
   return count;
 }
 
-// function getValidMoves(board, letter){
-//
-// }
+function getValidMoves(board, letter){
+  var twoDArr = [];
+  var myArr = board.slice();
+  var size = Math.sqrt(myArr);
+  for(var i = 0; i < myArr.length; i++){
+      var obj = indexToRowCol(i);
+      var oneDArr = [];
+      oneDArr.push(obj.row,obj.col);
+      if(getValidMoves(board,letter,obj.row,obj.col)){
+        twoDArr.push(oneDArr);
+      }
+  }
+  return twoDArr;
+}
 
 module.exports = {
     repeat: repeat,
