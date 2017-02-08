@@ -70,8 +70,8 @@ function placeLetter(board, letter, algebraicNotation){
 function placeLetters(board, letter, algebraicNotation){
   var myArr = board.slice();
   var size = Math.sqrt(board.length);
-  var index = 0;
   for(var i = 2; i < arguments.length; i++){
+    var index = 0;
     var rowPlace = algebraicToRowCol(arguments[i]);
     index += size*rowPlace.row;
     index += rowPlace.col;
@@ -118,7 +118,7 @@ function flipCells(board, cellsToFlip){
         return thisArr;
       }
       if(myArr[index] === "X"){
-        thisArr[index] = "O";
+        myArr[index] = "O";
       }
       else{
         myArr[index] = "X";
