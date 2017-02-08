@@ -92,13 +92,13 @@ function isBoardFull(board){
 function flip(board, row, col){
   var index = rowColToIndex(board,row,col);
   if(board[index] === " "){
-    board[index] = " ";
+    board[index] = ' ';
   }
   if(board[index] === "X"){
-    board[index] = "O";
+    board[index] = 'O';
   }
   if(board[index] === "O"){
-    board[index] = "X";
+    board[index] = 'X';
   }
 }
 //
