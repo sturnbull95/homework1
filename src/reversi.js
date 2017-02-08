@@ -95,7 +95,7 @@ function flip(board, row, col){
   if(thisArr[index] == " "){
     return thisArr;
   }
-  elseif(thisArr[index] === "X"){
+  if(thisArr[index] === "X"){
     thisArr[index] = "O";
   }
   else{
