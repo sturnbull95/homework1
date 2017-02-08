@@ -276,7 +276,6 @@ function isValidMove(board, letter, row, col){
   var sepDDR = [];
   var sepDUR = [];
 
-  var index = rowColToIndex(newBoard, row, col);
   //check north
   var placeN = index - size;
   var moveN = lastRow - 1;
