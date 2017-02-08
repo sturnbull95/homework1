@@ -291,7 +291,6 @@ describe('reversi', function() {
             // since we don't know what order these groups will be in...
             // we'll just make sure that each inner array is either 1 or 2 
             // elements long, and then test for membership
-            console.log(res);
             res.forEach((line) => {
                 expect(line).to.have.length.within(1, 2);
                 if(line.length === 1) {
