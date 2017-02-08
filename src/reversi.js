@@ -285,7 +285,6 @@ function isValidMove(board, letter, row, col){
     sepNorth.push(northArr);
     if(myArr[placeN] == letter){
       cells.push(sepNorth);
-      console.log(+1);
     }
     moveN -= 1;
     placeN -= size;
@@ -299,7 +298,6 @@ function isValidMove(board, letter, row, col){
     sepSouth.push(southArr);
     if(myArr[placeS] == letter){
       cells.push(sepSouth);
-      console.log(+1);
     }
     moveS += 1;
     placeS += size;
@@ -313,7 +311,6 @@ function isValidMove(board, letter, row, col){
     sepLeft.push(leftArr);
     if(myArr[placeL] == letter){
       cells.push(sepLeft);
-      console.log(+1);
     }
     lMove -= 1;
     placeL -= 1;
@@ -327,7 +324,6 @@ function isValidMove(board, letter, row, col){
     sepRight.push(rightArr);
     if(myArr[placeR] == letter){
       cells.push(sepRight);
-      console.log(+1);
     }
     rMove += 1;
     placeR += 1;
@@ -342,7 +338,6 @@ function isValidMove(board, letter, row, col){
     sepDUR.push(dURArr);
     if(myArr[placeDUR] == letter){
       cells.push(sepDUR);
-      console.log(+1);
     }
     rowUR -= 1;
     colUR += 1;
@@ -359,7 +354,6 @@ function isValidMove(board, letter, row, col){
     sepDDR.push(dDRArr);
     if(myArr[placeDDR] == letter){
       cells.push(sepDDR);
-      console.log(+1);
     }
     rowDR += 1;
     colDR += 1;
@@ -376,7 +370,6 @@ function isValidMove(board, letter, row, col){
     sepDDL.push(dDLArr);
     if(myArr[placeDDL] == letter){
       cells.push(sepDDL);
-      console.log(+1);
     }
     rowDL += 1;
     colDL -= 1;
@@ -394,15 +387,12 @@ function isValidMove(board, letter, row, col){
     sepDUL.push(dULArr);
     if(myArr[placeDUL] == letter){
       cells.push(sepDUL);
-      console.log(+1);
     }
     rowUL -= 1;
     colUL -= 1;
     placeDDL -= 1;
     placeDDL -= size;
   }
-
-  
   if(index > myArr.length || index < 0){
     return false;
   }
@@ -436,21 +426,21 @@ function isValidMoveAlgebraicNotation(board, letter,algebraicNotation){
   }
 }
 
-// function getLetterCounts(board){
-//   var x = 0;
-//   var y = 0;
-//   for(var i = 0; i < board.length; i++){
-//     if(board.charAt(i) === "X"){
-//       x += 1;
-//     }
-//     if(board.charAt(i) === "O"){
-//       y += 1;
-//     }
-//   }
-//   const count = {"row": x, "col": y};
-//   return count;
-// }
-//
+function getLetterCounts(board){
+  var x = 0;
+  var y = 0;
+  for(var i = 0; i < board.length; i++){
+    if(board.charAt(i) === "X"){
+      x += 1;
+    }
+    if(board.charAt(i) === "O"){
+      y += 1;
+    }
+  }
+  const count = {"row": x, "col": y};
+  return count;
+}
+
 // function getValidMoves(board, letter){
 //
 // }
@@ -471,6 +461,6 @@ module.exports = {
     getCellsToFlip: getCellsToFlip,
     isValidMove: isValidMove,
     isValidMoveAlgebraicNotation: isValidMoveAlgebraicNotation
-    // getLetterCounts: getLetterCounts,
+    getLetterCounts: getLetterCounts,
     // getValidMoves: getValidMoves
 }
