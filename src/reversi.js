@@ -73,7 +73,7 @@ function boardToString(board){
 }
 
 function isBoardFull(board){
-  if(board != undefined){}
+  if(board != undefined){
     if(board.indexOf(" ") == -1){
       return true;
     }
