@@ -155,8 +155,8 @@ function getCellsToFlip(board, lastRow, lastCol){
   var lMove = lastCol - 1;
   while(lMove > 0 && myArr[placeL] != letter && myArr[placeL] != " "){
     var leftArr = [];
-    leftArr.unshift(lastRow,lMove);
-    cells.push(leftArr);
+    leftArr.push(lastRow,lMove);
+    cells.unshift(leftArr);
     lMove -= 1;
     placeL -= 1;
   }
