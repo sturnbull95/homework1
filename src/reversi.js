@@ -183,7 +183,7 @@ module.exports = {
     setBoardCell: setBoardCell,
     algebraicToRowCol: algebraicToRowCol,
     placeLetter: placeLetter,
-    placeLetters: placeLetters,
+    //placeLetters: placeLetters,
     // boardToString: boardToString,
     // isBoardFull: isBoardFull,
     // flip: flip,
