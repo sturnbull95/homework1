@@ -246,8 +246,9 @@ function getCellsToFlip(board, lastRow, lastCol){
 }
 
 function isValidMove(board, letter, row, col){
-  var myArr = getCellsToFlip(board,row,col);
-  var index = rowColToIndex(board, row, col);
+  var newBoard = board.slice();
+  var myArr = getCellsToFlip(newBoard,row,col);
+  var index = rowColToIndex(newBoard, row, col);
   if(myArr.length == 0){
     return false;
   }
