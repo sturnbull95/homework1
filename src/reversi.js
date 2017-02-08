@@ -79,17 +79,15 @@ function placeLetters(board, letter, algebraicNotation){
 //
 // }
 //
-// function isBoardFull(board){
-//   if(board != undefined){
-//     if(board.indexOf(" ") == -1){
-//       return true;
-//     }
-//     else{
-//       return false;
-//     }
-//   }
-//
-// }
+function isBoardFull(board){
+  
+    if(board.indexOf(" ") == -1){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 //
 // function flip(board, row, col){
 //   var index = 0;
@@ -184,7 +182,7 @@ module.exports = {
     placeLetter: placeLetter,
     placeLetters: placeLetters,
     // boardToString: boardToString,
-    // isBoardFull: isBoardFull,
+    isBoardFull: isBoardFull,
     // flip: flip,
     // flipCells: flipCells,
     // getCellsToFlip: getCellsToFlip,
