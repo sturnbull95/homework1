@@ -173,7 +173,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   var rowUR = lastRow - 1;
   var colUR = lastCol + 1;
   var placeDUR = rowColToIndex(myArr,rowUR,colUR);
-  while(rowpl > 0 && colpl < size && myArr[placeDUR] != letter && myArr[placeDUR] != " "){
+  while(rowUR > 0 && colUR < size && myArr[placeDUR] != letter && myArr[placeDUR] != " "){
     var dURArr = [];
     dURArr.push(lastRow - size, lastCol + 1);
     cells.push(dURArr);
