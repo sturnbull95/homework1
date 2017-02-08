@@ -182,7 +182,7 @@ function getCellsToFlip(board, lastRow, lastCol){
     var rightArr = [];
     rightArr.push(lastRow,rMove);
     sepRight.push(rightArr);
-    cells.push(rightArr);
+    cells.push(sepRight);
     rMove += 1;
     placeR += 1;
   }
@@ -194,7 +194,7 @@ function getCellsToFlip(board, lastRow, lastCol){
     var dURArr = [];
     dURArr.push(rowUR, colUR);
     sepDUR.push(dURArr);
-    cells.push(dURArr);
+    cells.push(sepDUR);
     rowUR -= 1;
     colUR += 1;
     placeDUR += 1;
@@ -208,7 +208,7 @@ function getCellsToFlip(board, lastRow, lastCol){
     var dDRArr = [];
     dDRArr.push(rowDR, colDR);
     sepDDR.push(dDRArr);
-    cells.push(dDRArr);
+    cells.push(sepDDR);
     rowDR += 1;
     colDR += 1;
     placeDDR += 1;
@@ -222,7 +222,7 @@ function getCellsToFlip(board, lastRow, lastCol){
     var dDLArr = [];
     dDLArr.push(rowDL, colDl);
     sepDDL.push(dDLArr);
-    cells.push(dDLArr);
+    cells.push(sepDDL);
     rowDL += 1;
     colDL -= 1;
     placeDDL -= 1;
@@ -235,8 +235,8 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != letter && myArr[placeDUL] != " "){
     var dULArr = [];
     dULArr.push(rowUL, colUL);
-    sepDDL.push(dULArr);
-    cells.push(dULArr);
+    sepDUL.push(dULArr);
+    cells.push(sepDUL);
     rowUL -= 1;
     colUL -= 1;
     placeDDL -= 1;
