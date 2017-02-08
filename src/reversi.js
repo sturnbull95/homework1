@@ -29,8 +29,9 @@ function indexToRowCol(board, i){
 
 function setBoardCell(board, letter, row, col){
   var index = rowColToIndex(board, row, col);
-  board.splice(index,1,letter);
-  return board;
+  var newBoard.splice(index,1,letter);
+  console.log(newBoard);
+  return newBoard;
 }
 
 // function algebraicToRowCol(algebraicNotation){
