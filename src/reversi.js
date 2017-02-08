@@ -68,13 +68,13 @@ function placeLetter(board, letter, algebraicNotation){
   return newArr;
 }
 
-function placeLetters(board, letter, algebraicNotation){
-  var myArr = board.slice();
-  for(var i = 2; i < arguments.length; i++){
-    placeLetter(myArr,letter,arguments[i]);
-  }
-  return myArr;
-}
+// function placeLetters(board, letter, algebraicNotation){
+//   var myArr = board.slice();
+//   for(var i = 2; i < arguments.length; i++){
+//     placeLetter(myArr,letter,arguments[i]);
+//   }
+//   return myArr;
+// }
 
 // function boardToString(board){
 //
