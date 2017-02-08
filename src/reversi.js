@@ -185,7 +185,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   // check diag down/right
   var rowDR = lastRow + 1;
   var colDR = lastCol + 1;
-  var placeDUR = rowColToIndex(myArr,rowDR,colDR);
+  var placeDDR = rowColToIndex(myArr,rowDR,colDR);
   while(rowDR < size && colDR < size && myArr[placeDDR] != letter && myArr[placeDDR] != " "){
     var dDRArr = [];
     dDRArr.push(lastRow + size, lastCol + 1);
@@ -198,7 +198,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   // check diag down/left
   var rowDL = lastRow + 1;
   var colDL = lastCol - 1;
-  var placeDUR = rowColToIndex(myArr,rowDL,colDL);
+  var placeDDL = rowColToIndex(myArr,rowDL,colDL);
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != letter && myArr[placeDDL] != " "){
     var dDLArr = [];
     dDLArr.push(lastRow + size, lastCol - 1);
@@ -211,7 +211,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   // check diag up/left
   var rowUL = lastRow - 1;
   var colUL = lastCol - 1;
-  var placeDUR = rowColToIndex(myArr,rowUL,colUL);
+  var placeDUL = rowColToIndex(myArr,rowUL,colUL);
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != letter && myArr[placeDUL] != " "){
     var dULArr = [];
     dULArr.push(lastRow - size, lastCol - 1);
