@@ -64,6 +64,7 @@ function placeLetter(board, letter, algebraicNotation){
   index += size*rowPlace.row;
   index += rowPlace.col;
   newArr[index] = letter;
+  return newArr;
 }
 //
 // function placeLetters(board, letter, algebraicNotation){
@@ -176,7 +177,7 @@ module.exports = {
     indexToRowCol: indexToRowCol,
     setBoardCell: setBoardCell,
     algebraicToRowCol: algebraicToRowCol,
-    placeLetter: placeLetter,
+    // placeLetter: placeLetter,
     // placeLetters: placeLetters,
     // boardToString: boardToString,
     // isBoardFull: isBoardFull,
