@@ -293,9 +293,9 @@ describe('reversi', function() {
         });
         it('returns a list of groups of cells to flip based on last move', function() {
             let board = rev.generateBoard(4, 4, " ");
-            board = rev.placeLetters(board, 'O', 'B3', 'C3', 'D2');
-            board = rev.placeLetters(board, 'X', 'A3', 'D1', 'D3');
-            const res = rev.getCellsToFlip(board, 2, 3);
+            board = rev.placeLetters(board, 'O', 'B3', 'C3', 'D2','C2');
+            board = rev.placeLetters(board, 'X', 'A3', 'D1', 'D3','A4');
+            const res = rev.getCellsToFlip(board, 3, 1);
             // since we don't know what order these groups will be in...
             // we'll just make sure that each inner array is either 1 or 2 
             // elements long, and then test for membership
