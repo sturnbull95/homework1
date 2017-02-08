@@ -88,22 +88,22 @@ function isBoardFull(board){
       return false;
     }
   }
-//
-// function flip(board, row, col){
-//   var index = 0;
-//   var size = Math.sqrt(board.length);
-//   index += size * row;
-//   index += col;
-//   if(board.charAt(index) === " "){
-//     continue;
-//   }
-//   if(board.charAt(index) === "X"){
-//     board.splice(index, 1, 'O');
-//   }
-//   if(board.charAt(index) === "O"){
-//     board.splice(index, 1, 'X');
-//   }
-// }
+
+function flip(board, row, col){
+  var index = 0;
+  var size = Math.sqrt(board.length);
+  index += size * row;
+  index += col;
+  if(board.charAt(index) === " "){
+    continue;
+  }
+  if(board.charAt(index) === "X"){
+    board.splice(index, 1, 'O');
+  }
+  if(board.charAt(index) === "O"){
+    board.splice(index, 1, 'X');
+  }
+}
 //
 // function flipCells(board, cellsToFlip){
 //
@@ -183,7 +183,7 @@ module.exports = {
     placeLetters: placeLetters,
     // boardToString: boardToString,
     isBoardFull: isBoardFull,
-    // flip: flip,
+    flip: flip,
     // flipCells: flipCells,
     // getCellsToFlip: getCellsToFlip,
     // isValidMove: isValidMove,
