@@ -440,7 +440,7 @@ function getLetterCounts(board){
   }
   console.log(x);
   console.log(y);
-  const count = {"row": x, "col": y};
+  const count = {"X": x, "O": y};
   return count;
 }
 
@@ -467,4 +467,3 @@ module.exports = {
     getLetterCounts: getLetterCounts
     // getValidMoves: getValidMoves
 }
-
