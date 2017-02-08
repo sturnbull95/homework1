@@ -144,7 +144,6 @@ function getCellsToFlip(board, lastRow, lastCol){
   var letter = myArr[index];
   //check north
   var placeN = index - size;
-  
   var moveN = lastRow - 1;
   while(moveN > 0 && myArr[placeN] != " "){
     var northArr = [];
@@ -152,6 +151,9 @@ function getCellsToFlip(board, lastRow, lastCol){
     sepNorth.push(northArr);
     if(myArr[placeN] == letter){
       cells.push(sepNorth);
+    }
+    else{
+      continue;
     }
     moveN -= 1;
     placeN -= size;
@@ -167,6 +169,9 @@ function getCellsToFlip(board, lastRow, lastCol){
     if(myArr[placeS] == letter){
       cells.push(sepSouth);
     }
+    else{
+      continue;
+    }
     moveS += 1;
     placeS += size;
   }
@@ -180,6 +185,9 @@ function getCellsToFlip(board, lastRow, lastCol){
     sepLeft.push(leftArr);
     if(myArr[placeL] == letter){
       cells.push(sepLeft);
+    }
+    else{
+      continue;
     }
     lMove -= 1;
     placeL -= 1;
@@ -195,6 +203,9 @@ function getCellsToFlip(board, lastRow, lastCol){
     if(myArr[placeR] == letter){
       cells.push(sepRight);
     }
+    else{
+      continue;
+    }
     rMove += 1;
     placeR += 1;
   }
@@ -209,6 +220,9 @@ function getCellsToFlip(board, lastRow, lastCol){
     sepDUR.push(dURArr);
     if(myArr[placeDUR] == letter){
       cells.push(sepDUR);
+    }
+    else{
+      continue;
     }
     rowUR -= 1;
     colUR += 1;
@@ -227,6 +241,9 @@ function getCellsToFlip(board, lastRow, lastCol){
     if(myArr[placeDDR] == letter){
       cells.push(sepDDR);
     }
+    else{
+      continue;
+    }
     rowDR += 1;
     colDR += 1;
     placeDDR += 1;
@@ -243,6 +260,9 @@ function getCellsToFlip(board, lastRow, lastCol){
     sepDDL.push(dDLArr);
     if(myArr[placeDDL] == letter){
       cells.push(sepDDL);
+    }
+    else{
+      continue;
     }
     rowDL += 1;
     colDL -= 1;
@@ -261,6 +281,9 @@ function getCellsToFlip(board, lastRow, lastCol){
     if(myArr[placeDUL] == letter){
       cells.push(sepDUL);
     }
+    else{
+      continue;
+    }
     rowUL -= 1;
     colUL -= 1;
     placeDDL -= 1;
@@ -276,8 +299,6 @@ function isValidMove(board, letter, row, col){
   if(index > newBoard.length || index < 0){
     return false;
   }
-  console.log(myArr.length);
-  console.log(myArr);
   if(myArr.length == 0){
     return false;
   }
