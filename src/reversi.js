@@ -290,7 +290,13 @@ function isValidMoveAlgebraicNotation(board, letter,algebraicNotation){
   var newBoard = board.slice();
   var myArr = getCellsToFlip(newBoard, obj.row,obj.col);
   var index = rowColToIndex(newBoard, obj.row, obj.col);
-  if(newBoard[index] != " " && index > 0 && index < newBoard.length){
+  if(newBoard[index] != " "){
+    return false;
+  }
+  if(index < 0){
+    return false;
+  }
+  if(index > newBoard.length){
     return false;
   }
   if(myArr.length == 0){
