@@ -90,7 +90,7 @@ function flip(board, row, col){
   index += size * row;
   index += col;
   if(board.charAt(index) === " "){
-    break;
+    continue;
   }
   if(board.charAt(index) === "X"){
     board.splice(index, 1, 'O');
