@@ -318,7 +318,7 @@ function isValidMove(board, letter, row, col){
   placeN += index;
   placeN -= size;
   var moveN = row - 1;
-  console.log(letter);
+  //console.log(letter);
   while(moveN > 0 && myArr[rowColToIndex(myArr,moveN,col)] != " " && myArr[placeN] != letter){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
@@ -492,7 +492,7 @@ function getValidMoves(board, letter){
         twoDArr.push(oneDArr);
       }
   }
-  console.log(twoDArr);
+  //console.log(twoDArr);
   return twoDArr;
 }
 
