@@ -93,7 +93,7 @@ function boardToString(board){
   arr += newArr.join('');
 
   var straight = repeat('+---',size);
-  straight = lines.join('');
+  straight = straight.join('');
   straight += '+';
   var newArray = [];
   for(var x = 0; x < myArr.length; x++){
