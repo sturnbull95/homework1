@@ -320,6 +320,7 @@ function isValidMove(board, letter, row, col){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
     console.log(sepNorth);
+    console.log(myArr[placeN]);
     moveN -= 1;
     placeN -= size;
     console.log(myArr[placeN]);
