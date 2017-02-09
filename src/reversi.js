@@ -337,7 +337,7 @@ function isValidMove(board, letter, row, col){
   while(lMove > 0 && myArr[placeL] != " " && myArr[placeL] != letter){
     leftArr.push(row,lMove);
     sepLeft.push(leftArr);
-      cells.push(sepLeft);
+    cells.push(sepLeft);
     lMove -= 1;
     placeL -= 1;
   }
@@ -388,7 +388,7 @@ function isValidMove(board, letter, row, col){
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != " " && myArr[placeDDL] != letter){
     dDLArr.push(rowDL, colDl);
     sepDDL.push(dDLArr);
-      cells.push(sepDDL);
+    cells.push(sepDDL);
     rowDL += 1;
     colDL -= 1;
     placeDDL -= 1;
@@ -415,6 +415,9 @@ function isValidMove(board, letter, row, col){
   }
 
   if(cells.length == 0){
+    return false;
+  }
+  if(cells.indexOf("X") == -1){
     return false;
   }
   else{
