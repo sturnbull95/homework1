@@ -90,7 +90,7 @@ function boardToString(board){
   for(var i = 0; i < size; i++){
     newArr[i] = alphabet[i] + '   ';
   }
-  newArr += letters.join('');
+  newArr += newArr.join('');
 
   var lines = repeat('+---',size);
   lines = lines.join('');
