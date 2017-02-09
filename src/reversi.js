@@ -356,8 +356,10 @@ function isValidMove(board, letter, row, col){
   var lMove = col - 1;
   while(lMove > 0 && myArr[rowColToIndex(myArr,row,lMove)] != " " && 
   myArr[rowColToIndex(myArr,row,col)] != opposite){
-    leftArr.push(row,lMove);
-    sepLeft.push(leftArr);
+    if(myArr[rowColToIndex(myArr,row,lMove)] != letter){
+      leftArr.push(row,lMove);
+      sepLeft.push(leftArr);
+    }
     lMove -= 1;
     placeL -= 1;
     if(myArr[rowColToIndex(myArr,row,lMove)] == letter){
@@ -369,8 +371,10 @@ function isValidMove(board, letter, row, col){
   var placeR = index + 1;
   var rMove = col + 1;
   while(rMove < size && myArr[rowColToIndex(myArr,row,rMove)] != " "){
+    if(myArr[rowColToIndex(myArr,row,rMove)] != letter){
     rightArr.push(row,rMove);
     sepRight.push(rightArr);
+  }
     rMove += 1;
     placeR += 1;
     if(myArr[rowColToIndex(myArr,row,rMove)] == letter){
@@ -383,8 +387,10 @@ function isValidMove(board, letter, row, col){
   var colUR = col + 1;
   var placeDUR = rowColToIndex(myArr,rowUR,colUR);
   while(rowUR > 0 && colUR < size && myArr[rowColToIndex(myArr,rowUR,colUR)] != " "){
+    if(myArr[rowColToIndex(myArr,rowUR,colUR)] != letter){
     dURArr.push(rowUR, colUR);
     sepDUR.push(dURArr);
+  }
     rowUR -= 1;
     colUR += 1;
     placeDUR += 1;
@@ -399,8 +405,10 @@ function isValidMove(board, letter, row, col){
   var colDR = col + 1;
   var placeDDR = rowColToIndex(myArr,rowDR,colDR);
   while(rowDR < size && colDR < size && myArr[rowColToIndex(myArr,rowDR,colDR)] != " "){
+    if(myArr[rowColToIndex(myArr,rowDR,colDR)] != letter){
     dDRArr.push(rowDR, colDR);
     sepDDR.push(dDRArr);
+  }
     rowDR += 1;
     colDR += 1;
     placeDDR += 1;
@@ -415,8 +423,10 @@ function isValidMove(board, letter, row, col){
   var colDL = col - 1;
   var placeDDL = rowColToIndex(myArr,rowDL,colDL);
   while(rowDL < size && colDL > 0 && myArr[rowColToIndex(myArr,rowDL,colDL)] != " "){
+    if(myArr[rowColToIndex(myArr,rowDL,colDl)] != letter){
     dDLArr.push(rowDL, colDL);
     sepDDL.push(dDLArr);
+  }
     rowDL += 1;
     colDL -= 1;
     placeDDL -= 1;
@@ -432,8 +442,10 @@ function isValidMove(board, letter, row, col){
   var placeDUL = rowColToIndex(myArr,rowUL,colUL);
   var letterDUL = myArr[index];
   while(rowUL > 0 && colUL > 0 && myArr[rowColToIndex(myArr,rowUL,colUL)] != " "){
+    if(myArr[rowColToIndex(myArr,rowUL,colUL)] != letter){
     dULArr.push(rowUL, colUL);
     sepDUL.push(dULArr);
+  }
     rowUL -= 1;
     colUL -= 1;
     placeDDL -= 1;
