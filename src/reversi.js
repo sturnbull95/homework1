@@ -462,6 +462,7 @@ function isValidMove(board, letter, row, col){
       cells.push(sepDUL);
     }
   }
+  console.log(cells.length);
   if(cells.length == 0){
     return false;
   }
