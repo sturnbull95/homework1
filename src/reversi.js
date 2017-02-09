@@ -493,7 +493,6 @@ function getValidMoves(board, letter){
   }
   return twoDArr;
 }
-}
 
 module.exports = {
     repeat: repeat,
