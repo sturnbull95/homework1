@@ -101,7 +101,7 @@ function boardToString(board){
   }
   var x = 0;
   var n = size;
-  var newBoard = lettersArray + '\n';
+  var newBoard = arr + '\n';
   for(var i = 0; i < size; i++){
     board += '   ' + lines + '\n' + (i+1) + ' ';
     for(var j = 0; j < n; j++){
