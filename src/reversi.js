@@ -491,6 +491,7 @@ function getValidMoves(board, letter){
         twoDArr.push(oneDArr);
       }
   }
+  console.log(twoDArr);
   return twoDArr;
 }
 
