@@ -83,6 +83,37 @@ function placeLetters(board, letter, algebraicNotation){
 function boardToString(board){
   var myArr = board.slice();
   var size = Math.sqrt(myArr.length);
+  var alphabet = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q",
+  "R","S","T","U","V","W","X","Y","Z"];
+  var newArr = [];
+  var arr = '       ';
+  for(var i = 0; i < size; i++){
+    newArr[i] = alphabet[i] + '   ';
+  }
+  newArr += letters.join('');
+
+  var lines = repeat('+---',size);
+  lines = lines.join('');
+  lines += '+';
+  var newArray = [];
+  for(var x = 0; x < myArr.length; x++){
+    newArray[i] = '| ' + board[i] + ' ';
+  }
+  var x = 0;
+  var n = size;
+  var newBoard = lettersArray + '\n';
+  for(var i = 0; i < size; i++){
+    board += '   ' + lines + '\n' + (i+1) + ' ';
+    for(var j = 0; j < n; j++){
+      board+= newArray[j];
+  }
+  board += '|\n';
+  x += size;
+  n += size;
+}
+newBoard += '    ' + lines
+
+return newBoard;
 }
 
 function isBoardFull(board){
