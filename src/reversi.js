@@ -491,7 +491,7 @@ function getValidMoves(board, letter){
       console.log(oneDArr);
       if(isValidMove(myArr,letter,indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col)){
         twoDArr.push(oneDArr);
-        console.log(twoDArr);
+        console.log(twoDArr + " hi");
       }
   }
   return twoDArr;
