@@ -315,13 +315,17 @@ function isValidMove(board, letter, row, col){
 
   //check north
   var northArr = [];
-  var placeN = index - size;
+  var placeN = 0;
+  console.log(placeN);
+  placeN += index;
+  console.log(placeN);
+  placeN -= size;
+  console.log(placeN);
   var moveN = row - 1;
   while(moveN > 0 && myArr[placeN] != " "){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
     console.log(sepNorth);
-    console.log(myArr[placeN]);
     moveN -= 1;
     placeN -= size;
     console.log(myArr[placeN]);
