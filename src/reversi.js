@@ -485,10 +485,12 @@ function getValidMoves(board, letter){
   var size = Math.sqrt(myArr);
   for(var i = 0; i < myArr.length; i++){
       var obj = indexToRowCol(i);
+      var row = obj.row;
+      var col = obj.col;
       var oneDArr = [];
-      oneDArr.push(obj.row,obj.col);
+      oneDArr.push(row,col);
       console.log(oneDArr);
-      if(isValidMove(board,letter,obj.row,obj.col)){
+      if(isValidMove(board,letter,row,col)){
         twoDArr.push(oneDArr);
       }
   }
