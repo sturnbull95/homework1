@@ -92,26 +92,26 @@ function boardToString(board){
   }
   arr += newArr.join('');
 
-  var lines = repeat('+---',size);
-  lines = lines.join('');
-  lines += '+';
+  var straight = repeat('+---',size);
+  straight = lines.join('');
+  straight += '+';
   var newArray = [];
   for(var x = 0; x < myArr.length; x++){
     newArray[i] = '| ' + board[i] + ' ';
   }
-  var x = 0;
-  var n = size;
+  var y = 0;
+  var o = size;
   var newBoard = arr + '\n';
   for(var i = 0; i < size; i++){
-    board += '   ' + lines + '\n' + (i+1) + ' ';
-    for(var j = 0; j < n; j++){
+    board += '   ' + straight + '\n' + (i+1) + ' ';
+    for(var j = 0; j < o; j++){
       board+= newArray[j];
   }
   board += '|\n';
-  x += size;
-  n += size;
+  y += size;
+  o += size;
 }
-newBoard += '    ' + lines
+newBoard += '    ' + straight
 
 return newBoard;
 }
@@ -431,7 +431,7 @@ function isValidMove(board, letter, row, col){
   if(index > myArr.length || index < 0){
     return false;
   }
-  
+
   if(cells.length == 0){
     return false;
   }
