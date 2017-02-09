@@ -80,10 +80,11 @@ function placeLetters(board, letter, algebraicNotation){
   return myArr;
 }
 
-// function boardToString(board){
-//
-// }
-//
+function boardToString(board){
+  var myArr = board.slice();
+  var size = Math.sqrt(myArr.length);
+}
+
 function isBoardFull(board){
 
     if(board.indexOf(" ") == -1){
@@ -283,6 +284,7 @@ function isValidMove(board, letter, row, col){
   while(moveN > 0 && myArr[placeN] != " " && myArr[placeN] != letter){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
+    console.log(northArr);
     if(myArr[placeN] == letter){
       cells.push(sepNorth);
     }
