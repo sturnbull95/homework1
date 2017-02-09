@@ -315,10 +315,7 @@ function isValidMove(board, letter, row, col){
   while(moveN > 0 && myArr[placeN] != " " && myArr[placeN] != letter){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
-    console.log(northArr);
-    if(myArr[placeN] == letter){
-      cells.push(sepNorth);
-    }
+    cells.push(sepNorth);
     moveN -= 1;
     placeN -= size;
   }
@@ -329,9 +326,7 @@ function isValidMove(board, letter, row, col){
   while(moveS < size && myArr[placeS] != " " && myArr[placeS] != letter){
     southArr.push(moveS,col);
     sepSouth.push(southArr);
-    if(myArr[placeS] == letter){
       cells.push(sepSouth);
-    }
     moveS += 1;
     placeS += size;
   }
@@ -342,9 +337,7 @@ function isValidMove(board, letter, row, col){
   while(lMove > 0 && myArr[placeL] != " " && myArr[placeL] != letter){
     leftArr.push(row,lMove);
     sepLeft.push(leftArr);
-    if(myArr[placeL] == letter){
       cells.push(sepLeft);
-    }
     lMove -= 1;
     placeL -= 1;
   }
@@ -355,9 +348,7 @@ function isValidMove(board, letter, row, col){
   while(rMove < size && myArr[placeR] != " " && myArr[placeR] != letter){
     rightArr.push(row,rMove);
     sepRight.push(rightArr);
-    if(myArr[placeR] == letter){
       cells.push(sepRight);
-    }
     rMove += 1;
     placeR += 1;
   }
@@ -369,9 +360,7 @@ function isValidMove(board, letter, row, col){
   while(rowUR > 0 && colUR < size && myArr[placeDUR] != " " && myArr[placeDUR] != letter){
     dURArr.push(rowUR, colUR);
     sepDUR.push(dURArr);
-    if(myArr[placeDUR] == letter){
       cells.push(sepDUR);
-    }
     rowUR -= 1;
     colUR += 1;
     placeDUR += 1;
@@ -385,9 +374,7 @@ function isValidMove(board, letter, row, col){
   while(rowDR < size && colDR < size && myArr[placeDDR] != " " && myArr[placeDDR] != letter){
     dDRArr.push(rowDR, colDR);
     sepDDR.push(dDRArr);
-    if(myArr[placeDDR] == letter){
       cells.push(sepDDR);
-    }
     rowDR += 1;
     colDR += 1;
     placeDDR += 1;
@@ -401,9 +388,7 @@ function isValidMove(board, letter, row, col){
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != " " && myArr[placeDDL] != letter){
     dDLArr.push(rowDL, colDl);
     sepDDL.push(dDLArr);
-    if(myArr[placeDDL] == letter){
       cells.push(sepDDL);
-    }
     rowDL += 1;
     colDL -= 1;
     placeDDL -= 1;
@@ -418,15 +403,12 @@ function isValidMove(board, letter, row, col){
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != " " && myArr[placeDUL] != letter){
     dULArr.push(rowUL, colUL);
     sepDUL.push(dULArr);
-    if(myArr[placeDUL] == letter){
       cells.push(sepDUL);
-    }
     rowUL -= 1;
     colUL -= 1;
     placeDDL -= 1;
     placeDDL -= size;
   }
-  console.log(cells);
 
   if(index > myArr.length || index < 0){
     return false;
