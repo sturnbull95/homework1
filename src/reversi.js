@@ -483,13 +483,11 @@ function getValidMoves(board, letter){
   var twoDArr = [];
   var myArr = board.slice();
   var size = Math.sqrt(myArr);
-  for(var i = 0; i < size; i++){
-    for(var x = 0; x < size; x++){
+  for(var i = 0; i < myArr.length; i++){
+      var obj = indexToRowCol(i);
       var oneDArr = [];
-      oneDArr.push(i,x);
-      
-      console.log(oneDArr);
-      if(isValidMove(board,letter,row,col)){
+      oneDArr.push(indexToRowCol(i).row,indexToRowCol(i).col);
+      if(isValidMove(board,letter,indexToRowCol(i).row,indexToRowCol(i).col)){
         twoDArr.push(oneDArr);
       }
   }
