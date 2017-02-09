@@ -163,7 +163,7 @@ function flipCells(board, cellsToFlip){
 function getCellsToFlip(board, lastRow, lastCol){
   var cells = [];
   var myArr = board.slice();
-  var index = rowColToIndex(myArr,lastRow,lastCol);
+  var index = rowColToIndex(myArr,row,col);
   var size = Math.sqrt(myArr);
   var sepNorth = [];
   var sepSouth = [];
@@ -174,122 +174,125 @@ function getCellsToFlip(board, lastRow, lastCol){
   var sepDDR = [];
   var sepDUR = [];
   var letter = myArr[index];
+
   //check north
-  var placeN = index - size;
-  var moveN = lastRow - 1;
+  var northArr = [];
+  var placeN = 0;
+  placeN += index;
+  placeN -= size;
+  var moveN = row - 1;
   while(moveN > 0 && myArr[placeN] != " "){
-    var northArr = [];
-    northArr.push(moveN,lastCol);
+    northArr.push(moveN,col);
     sepNorth.push(northArr);
-    if(myArr[placeN] == letter){
-      cells.push(sepNorth);
-    }
     moveN -= 1;
     placeN -= size;
+    if(myArr[rowColToIndex(myArr,moveN,col)] == letter){
+      cells.push(sepNorth);
+    }
   }
   // check south
+  var southArr = [];
   var placeS = index + size;
-  var moveS = lastRow + 1;
+  var moveS = row + 1;
   while(moveS < size && myArr[placeS] != " "){
-    var southArr = [];
-    southArr.push(moveS,lastCol);
+    southArr.push(moveS,col);
     sepSouth.push(southArr);
-    if(myArr[placeS] == letter){
-      cells.push(sepSouth);
-    }
     moveS += 1;
     placeS += size;
+    if(myArr[rowColToIndex(myArr,moveS,col)] == letter){
+      cells.push(sepSouth);
+    }
   }
   //check left
+  var leftArr = [];
   var placeL = index - 1;
-  var lMove = lastCol - 1;
+  var lMove = col - 1;
   while(lMove > 0 && myArr[placeL] != " "){
-    var leftArr = [];
-    leftArr.push(lastRow,lMove);
+    leftArr.push(row,lMove);
     sepLeft.push(leftArr);
-    if(myArr[placeL] == letter){
-      cells.push(sepLeft);
-    }
     lMove -= 1;
     placeL -= 1;
+    if(myArr[rowColToIndex(myArr,row,lMove)] == letter){
+      cells.push(sepLeft);
+    }
   }
   //check right
+  var rightArr = [];
   var placeR = index + 1;
-  var rMove = lastCol + 1;
+  var rMove = col + 1;
   while(rMove < size && myArr[placeR] != " "){
-    var rightArr = [];
-    rightArr.push(lastRow,rMove);
+    rightArr.push(row,rMove);
     sepRight.push(rightArr);
-    if(myArr[placeR] == letter){
-      cells.push(sepRight);
-    }
     rMove += 1;
     placeR += 1;
+    if(myArr[rowColToIndex(myArr,row,rMove)] == letter){
+      cells.push(sepRight);
+    }
   }
   //check diag up/right
-  var rowUR = lastRow - 1;
-  var colUR = lastCol + 1;
+  var dURArr = [];
+  var rowUR = row - 1;
+  var colUR = col + 1;
   var placeDUR = rowColToIndex(myArr,rowUR,colUR);
   while(rowUR > 0 && colUR < size && myArr[placeDUR] != " "){
-    var dURArr = [];
     dURArr.push(rowUR, colUR);
     sepDUR.push(dURArr);
-    if(myArr[placeDUR] == letter){
-      cells.push(sepDUR);
-    }
     rowUR -= 1;
     colUR += 1;
     placeDUR += 1;
     placeDUR -= size;
+    if(myArr[rowColToIndex(myArr,rowUR,colUR)] == letter){
+      cells.push(sepDUR);
+    }
   }
   // check diag down/right
-  var rowDR = lastRow + 1;
-  var colDR = lastCol + 1;
+  var dDRArr = [];
+  var rowDR = row + 1;
+  var colDR = col + 1;
   var placeDDR = rowColToIndex(myArr,rowDR,colDR);
   while(rowDR < size && colDR < size && myArr[placeDDR] != " "){
-    var dDRArr = [];
     dDRArr.push(rowDR, colDR);
     sepDDR.push(dDRArr);
-    if(myArr[placeDDR] == letter){
-      cells.push(sepDDR);
-    }
     rowDR += 1;
     colDR += 1;
     placeDDR += 1;
     placeDDR += size;
+    if(myArr[rowColToIndex(myArr,rowDR,colDR)] == letter){
+      cells.push(sepDDR);
+    }
   }
   // check diag down/left
-  var rowDL = lastRow + 1;
-  var colDL = lastCol - 1;
+  var dDLArr = [];
+  var rowDL = row + 1;
+  var colDL = col - 1;
   var placeDDL = rowColToIndex(myArr,rowDL,colDL);
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != " "){
-    var dDLArr = [];
-    dDLArr.push(rowDL, colDl);
+    dDLArr.push(rowDL, colDL);
     sepDDL.push(dDLArr);
-    if(myArr[placeDDL] == letter){
-      cells.push(sepDDL);
-    }
     rowDL += 1;
     colDL -= 1;
     placeDDL -= 1;
     placeDDL += size;
+    if(myArr[rowColToIndex(myArr,rowDL,colDL)] == letter){
+      cells.push(sepDDL);
+    }
   }
   // check diag up/left
-  var rowUL = lastRow - 1;
-  var colUL = lastCol - 1;
+  var dULArr = [];
+  var rowUL = row - 1;
+  var colUL = col - 1;
   var placeDUL = rowColToIndex(myArr,rowUL,colUL);
   var letterDUL = myArr[index];
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != " "){
-    var dULArr = [];
     dULArr.push(rowUL, colUL);
     sepDUL.push(dULArr);
-    if(myArr[placeDUL] == letter){
-      cells.push(sepDUL);
-    }
     rowUL -= 1;
     colUL -= 1;
     placeDDL -= 1;
     placeDDL -= size;
+    if(myArr[rowColToIndex(myArr,rowUL,colUL)] == letter){
+      cells.push(sepDUL);
+    }
   }
   return cells;
 }
