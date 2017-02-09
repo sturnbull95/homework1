@@ -484,10 +484,10 @@ function getValidMoves(board, letter){
   var myArr = board.slice();
   var size = Math.sqrt(myArr);
   for(var i = 0; i < myArr.length; i++){
-      var obj = indexToRowCol(i);
+      var obj = indexToRowCol(myArr,i);
       var oneDArr = [];
-      oneDArr.push(indexToRowCol(i).row,indexToRowCol(i).col);
-      if(isValidMove(board,letter,indexToRowCol(i).row,indexToRowCol(i).col)){
+      oneDArr.push(indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col);
+      if(isValidMove(myArr,letter,indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col)){
         twoDArr.push(oneDArr);
       }
   }
