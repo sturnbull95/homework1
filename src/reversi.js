@@ -325,7 +325,7 @@ function isValidMove(board, letter, row, col){
   placeN += index;
   placeN -= size;
   var moveN = row - 1;
-  while(moveN > 0 && myArr[rowColToIndex(myArr,moveN,col)] != " " && 
+  while(moveN > 0 && myArr[rowColToIndex(myArr,moveN,col)] != " " &&
   myArr[rowColToIndex(myArr,row,col)] != opposite){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
@@ -340,7 +340,7 @@ function isValidMove(board, letter, row, col){
   var southArr = [];
   var placeS = index + size;
   var moveS = row + 1;
-  while(moveS < size && myArr[rowColToIndex(myArr,moveS,col)] != " " && 
+  while(moveS < size && myArr[rowColToIndex(myArr,moveS,col)] != " " &&
   myArr[rowColToIndex(myArr,row,col)] != opposite){
     southArr.push(moveS,col);
     sepSouth.push(southArr);
@@ -354,7 +354,7 @@ function isValidMove(board, letter, row, col){
   var leftArr = [];
   var placeL = index - 1;
   var lMove = col - 1;
-  while(lMove > 0 && myArr[rowColToIndex(myArr,row,lMove)] != " " && 
+  while(lMove > 0 && myArr[rowColToIndex(myArr,row,lMove)] != " " &&
   myArr[rowColToIndex(myArr,row,col)] != opposite){
     if(myArr[rowColToIndex(myArr,row,lMove)] != letter){
       console.log("hi");
@@ -517,7 +517,7 @@ function getValidMoves(board, letter){
       var oneDArr = [];
       oneDArr.push(indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col);
       console.log(indexToRowCol(myArr,i).row);
-      if(isValidMove(myArr,letter,indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col)){
+      if(getCellsToFlip(myArr,indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col).length >0){
         twoDArr.push(oneDArr);
         console.log(twoDArr);
       }
