@@ -393,6 +393,7 @@ function isValidMove(board, letter, row, col){
     placeDDL -= 1;
     placeDDL -= size;
   }
+  console.log(cells);
 
   if(index > myArr.length || index < 0){
     return false;
