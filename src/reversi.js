@@ -280,6 +280,7 @@ function isValidMove(board, letter, row, col){
   var northArr = [];
   var placeN = index - size;
   var moveN = row - 1;
+  console.log(index);
   console.log(placeN);
   while(moveN > 0 && myArr[placeN] != " "){
     northArr.push(moveN,col);
