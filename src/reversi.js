@@ -206,7 +206,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   //check left
   var leftArr = [];
   var placeL = index - 1;
-  var lMove = col - 1;
+  var lMove = lastCol - 1;
   while(lMove > 0 && myArr[placeL] != " "){
     leftArr.push(row,lMove);
     sepLeft.push(leftArr);
