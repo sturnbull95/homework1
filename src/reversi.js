@@ -318,7 +318,7 @@ function isValidMove(board, letter, row, col){
   placeN += index;
   placeN -= size;
   var moveN = row - 1;
-  while(moveN > 0 && myArr[placeN] != " "){
+  while(moveN > 0 && myArr[placeN] != " " && myArr[placeN] != letter){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
     moveN -= 1;
@@ -331,7 +331,7 @@ function isValidMove(board, letter, row, col){
   var southArr = [];
   var placeS = index + size;
   var moveS = row + 1;
-  while(moveS < size && myArr[placeS] != " "){
+  while(moveS < size && myArr[placeS] != " " && myArr[placeS] != letter){
     southArr.push(moveS,col);
     sepSouth.push(southArr);
     moveS += 1;
