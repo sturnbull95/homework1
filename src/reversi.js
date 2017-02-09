@@ -321,7 +321,6 @@ function isValidMove(board, letter, row, col){
   while(moveN > 0 && myArr[placeN] != " "){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
-    console.log(sepNorth);
     moveN -= 1;
     placeN -= size;
     if(myArr[rowColToIndex(myArr,moveN,col)] == letter){
