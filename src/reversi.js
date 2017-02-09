@@ -487,13 +487,13 @@ function getValidMoves(board, letter){
   for(var i = 0; i < myArr.length; i++){
       var obj = indexToRowCol(myArr,i);
       var oneDArr = [];
-      console.log(oneDArr);
       oneDArr.push(indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col);
+      console.log(oneDArr);
       if(isValidMove(myArr,letter,indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col)){
         twoDArr.push(oneDArr);
+        console.log(twoDArr);
       }
   }
-  //console.log(twoDArr);
   return twoDArr;
 }
 
