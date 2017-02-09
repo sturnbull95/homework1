@@ -259,7 +259,6 @@ function getCellsToFlip(board, lastRow, lastCol){
     placeDDL -= 1;
     placeDDL -= size;
   }
-  console.log(cells);
   return cells;
 }
 
@@ -281,7 +280,7 @@ function isValidMove(board, letter, row, col){
   var northArr = [];
   var placeN = index - size;
   var moveN = row - 1;
-  if(myArr[index] == " "){
+  console.log(placeN);
   while(moveN > 0 && myArr[placeN] != " "){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
@@ -395,7 +394,6 @@ function isValidMove(board, letter, row, col){
     placeDDL -= 1;
     placeDDL -= size;
   }
-}
 
   if(index > myArr.length || index < 0){
     return false;
