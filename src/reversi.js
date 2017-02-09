@@ -501,7 +501,7 @@ module.exports = {
     algebraicToRowCol: algebraicToRowCol,
     placeLetter: placeLetter,
     placeLetters: placeLetters,
-    // boardToString: boardToString,
+    boardToString: boardToString,
     isBoardFull: isBoardFull,
     flip: flip,
     flipCells: flipCells,
