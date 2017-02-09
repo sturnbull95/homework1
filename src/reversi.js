@@ -413,15 +413,13 @@ function isValidMove(board, letter, row, col){
     placeDDL -= 1;
     placeDDL -= size;
   }
-  console.log(cells);
-  console.log(cells.length);
 
   if(cells.length == 0){
     return false;
   }
-  if(cells.indexOf("X") == -1){
-    return false;
-  }
+  // if(cells.indexOf("X") == -1){
+  //   return false;
+  // }
   else{
     return true;
   }
