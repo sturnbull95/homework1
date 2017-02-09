@@ -307,6 +307,13 @@ function isValidMove(board, letter, row, col){
   var sepDUL = [];
   var sepDDR = [];
   var sepDUR = [];
+  var opposite = "";
+  if(letter == "X"){
+    opposite += "O";
+  }
+  else{
+    opposite += "X";
+  }
 
   if(index > myArr.length || index < 0){
     return false;
@@ -319,7 +326,8 @@ function isValidMove(board, letter, row, col){
   placeN -= size;
   var moveN = row - 1;
   //console.log(letter);
-  while(moveN > 0 && myArr[rowColToIndex(myArr,moveN,col)] != " " && myArr[placeN] != letter){
+  while(moveN > 0 && myArr[rowColToIndex(myArr,moveN,col)] != " " && 
+  myArr[rowColToIndex(myArr,row,col)] != opposite){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
     moveN -= 1;
@@ -332,7 +340,8 @@ function isValidMove(board, letter, row, col){
   var southArr = [];
   var placeS = index + size;
   var moveS = row + 1;
-  while(moveS < size && myArr[rowColToIndex(myArr,moveS,col)] != " " && myArr[placeS] != letter){
+  while(moveS < size && myArr[rowColToIndex(myArr,moveS,col)] != " " && 
+  myArr[rowColToIndex(myArr,row,col)] != opposite){
     southArr.push(moveS,col);
     sepSouth.push(southArr);
     moveS += 1;
@@ -345,7 +354,8 @@ function isValidMove(board, letter, row, col){
   var leftArr = [];
   var placeL = index - 1;
   var lMove = col - 1;
-  while(lMove > 0 && myArr[rowColToIndex(myArr,row,lMove)] != " "){
+  while(lMove > 0 && myArr[rowColToIndex(myArr,row,lMove)] != " " && 
+  myArr[rowColToIndex(myArr,row,col)] != opposite){
     leftArr.push(row,lMove);
     sepLeft.push(leftArr);
     lMove -= 1;
