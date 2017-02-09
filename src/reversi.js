@@ -259,6 +259,7 @@ function getCellsToFlip(board, lastRow, lastCol){
     placeDDL -= 1;
     placeDDL -= size;
   }
+  console.log(cells);
   return cells;
 }
 
@@ -395,6 +396,7 @@ function isValidMove(board, letter, row, col){
     placeDDL -= size;
   }
 }
+
   if(index > myArr.length || index < 0){
     return false;
   }
