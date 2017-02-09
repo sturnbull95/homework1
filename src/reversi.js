@@ -277,10 +277,10 @@ function isValidMove(board, letter, row, col){
   var sepDUR = [];
 
   //check north
+  var northArr = [];
   var placeN = index - size;
   var moveN = row - 1;
   while(moveN > 0 && myArr[placeN] != " "){
-    var northArr = [];
     northArr.push(moveN,col);
     sepNorth.push(northArr);
     if(myArr[placeN] == letter){
@@ -290,10 +290,10 @@ function isValidMove(board, letter, row, col){
     placeN -= size;
   }
   // check south
+  var southArr = [];
   var placeS = index + size;
   var moveS = row + 1;
   while(moveS < size && myArr[placeS] != " "){
-    var southArr = [];
     southArr.push(moveS,col);
     sepSouth.push(southArr);
     if(myArr[placeS] == letter){
@@ -303,10 +303,10 @@ function isValidMove(board, letter, row, col){
     placeS += size;
   }
   //check left
+  var leftArr = [];
   var placeL = index - 1;
   var lMove = col - 1;
   while(lMove > 0 && myArr[placeL] != " "){
-    var leftArr = [];
     leftArr.push(row,lMove);
     sepLeft.push(leftArr);
     if(myArr[placeL] == letter){
@@ -316,10 +316,10 @@ function isValidMove(board, letter, row, col){
     placeL -= 1;
   }
   //check right
+  var rightArr = [];
   var placeR = index + 1;
   var rMove = col + 1;
   while(rMove < size && myArr[placeR] != " "){
-    var rightArr = [];
     rightArr.push(row,rMove);
     sepRight.push(rightArr);
     if(myArr[placeR] == letter){
@@ -329,11 +329,11 @@ function isValidMove(board, letter, row, col){
     placeR += 1;
   }
   //check diag up/right
+  var dURArr = [];
   var rowUR = row - 1;
   var colUR = col + 1;
   var placeDUR = rowColToIndex(myArr,rowUR,colUR);
   while(rowUR > 0 && colUR < size && myArr[placeDUR] != " "){
-    var dURArr = [];
     dURArr.push(rowUR, colUR);
     sepDUR.push(dURArr);
     if(myArr[placeDUR] == letter){
@@ -345,11 +345,11 @@ function isValidMove(board, letter, row, col){
     placeDUR -= size;
   }
   // check diag down/right
+  var dDRArr = [];
   var rowDR = row + 1;
   var colDR = col + 1;
   var placeDDR = rowColToIndex(myArr,rowDR,colDR);
   while(rowDR < size && colDR < size && myArr[placeDDR] != " "){
-    var dDRArr = [];
     dDRArr.push(rowDR, colDR);
     sepDDR.push(dDRArr);
     if(myArr[placeDDR] == letter){
@@ -361,11 +361,11 @@ function isValidMove(board, letter, row, col){
     placeDDR += size;
   }
   // check diag down/left
+  var dDLArr = [];
   var rowDL = row + 1;
   var colDL = col - 1;
   var placeDDL = rowColToIndex(myArr,rowDL,colDL);
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != " "){
-    var dDLArr = [];
     dDLArr.push(rowDL, colDl);
     sepDDL.push(dDLArr);
     if(myArr[placeDDL] == letter){
@@ -377,12 +377,12 @@ function isValidMove(board, letter, row, col){
     placeDDL += size;
   }
   // check diag up/left
+  var dULArr = [];
   var rowUL = row - 1;
   var colUL = col - 1;
   var placeDUL = rowColToIndex(myArr,rowUL,colUL);
   var letterDUL = myArr[index];
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != " "){
-    var dULArr = [];
     dULArr.push(rowUL, colUL);
     sepDUL.push(dULArr);
     if(myArr[placeDUL] == letter){
@@ -438,8 +438,6 @@ function getLetterCounts(board){
       y += 1;
     }
   }
-  console.log(x);
-  console.log(y);
   const count = {"X": x, "O": y};
   return count;
 }
