@@ -522,6 +522,9 @@ function getValidMoves(board, letter){
       if(isValidMove(myArr,letter,indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col)){
         twoDArr.push(oneDArr);
       }
+      else{
+        twoDArr = [];
+      }
   }
   console.log(twoDArr);
   return twoDArr;
