@@ -311,7 +311,7 @@ function isValidMove(board, letter, row, col){
   if(index > myArr.length || index < 0){
     return false;
   }
-  
+
   //check north
   var northArr = [];
   var placeN = index - size;
@@ -413,7 +413,7 @@ function isValidMove(board, letter, row, col){
     placeDDL -= 1;
     placeDDL -= size;
   }
-
+  console.log(cells);
   if(cells.length == 0){
     return false;
   }
