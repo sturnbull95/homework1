@@ -307,7 +307,7 @@ function isValidMove(board, letter, row, col){
   var sepDUL = [];
   var sepDDR = [];
   var sepDUR = [];
-  console.log(row);
+  console.log(row,col);
 
   if(index > myArr.length || index < 0){
     return false;
