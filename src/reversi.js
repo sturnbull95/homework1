@@ -210,7 +210,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   while(lMove > 0 && myArr[placeL] != " "){
     leftArr.push(lastRow,lMove);
     sepLeft.push(leftArr);
-    console.log(southArr);
+    console.log(leftArr);
     lMove -= 1;
     placeL -= 1;
     if(myArr[rowColToIndex(myArr,lastRow,lMove)] == letter){
