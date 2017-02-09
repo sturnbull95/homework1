@@ -16,6 +16,7 @@ function rowColToIndex(board, rowNumber, colNumber){
   var index = 0;
   index += size * rowNumber;
   index += colNumber;
+  console.log(index);
   return index;
 }
 
@@ -280,8 +281,6 @@ function isValidMove(board, letter, row, col){
   var northArr = [];
   var placeN = index - size;
   var moveN = row - 1;
-  console.log(index);
-  console.log(placeN);
   while(moveN > 0 && myArr[placeN] != " "){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
