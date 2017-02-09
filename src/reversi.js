@@ -500,6 +500,7 @@ function getValidMoves(board, letter){
       oneDArr.push(indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col);
       if(isValidMove(myArr,letter,indexToRowCol(myArr,i).row,indexToRowCol(myArr,i).col)){
         twoDArr.push(oneDArr);
+        console.log(twoDArr);
       }
   }
   return twoDArr;
