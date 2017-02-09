@@ -319,9 +319,11 @@ function isValidMove(board, letter, row, col){
   while(moveN > 0 && myArr[placeN] != " "){
     northArr.push(moveN,col);
     sepNorth.push(northArr);
-    cells.push(sepNorth);
     moveN -= 1;
     placeN -= size;
+    if(myArr[placeN] == letter){
+      cells.push(sepNorth);
+    }
   }
   // check south
   var southArr = [];
@@ -330,9 +332,11 @@ function isValidMove(board, letter, row, col){
   while(moveS < size && myArr[placeS] != " "){
     southArr.push(moveS,col);
     sepSouth.push(southArr);
-      cells.push(sepSouth);
     moveS += 1;
     placeS += size;
+    if(myArr[placeS] == letter){
+      cells.push(sepSouth);
+    }
   }
   //check left
   var leftArr = [];
@@ -341,9 +345,11 @@ function isValidMove(board, letter, row, col){
   while(lMove > 0 && myArr[placeL] != " "){
     leftArr.push(row,lMove);
     sepLeft.push(leftArr);
-    cells.push(sepLeft);
     lMove -= 1;
     placeL -= 1;
+    if(myArr[placeL] == letter){
+      cells.push(sepLeft);
+    }
   }
   //check right
   var rightArr = [];
@@ -352,9 +358,11 @@ function isValidMove(board, letter, row, col){
   while(rMove < size && myArr[placeR] != " "){
     rightArr.push(row,rMove);
     sepRight.push(rightArr);
-      cells.push(sepRight);
     rMove += 1;
     placeR += 1;
+    if(myArr[placeR] == letter){
+      cells.push(sepRight);
+    }
   }
   //check diag up/right
   var dURArr = [];
@@ -364,11 +372,13 @@ function isValidMove(board, letter, row, col){
   while(rowUR > 0 && colUR < size && myArr[placeDUR] != " "){
     dURArr.push(rowUR, colUR);
     sepDUR.push(dURArr);
-      cells.push(sepDUR);
     rowUR -= 1;
     colUR += 1;
     placeDUR += 1;
     placeDUR -= size;
+    if(myArr[placeDUR] == letter){
+      cells.push(sepDUR);
+    }
   }
   // check diag down/right
   var dDRArr = [];
@@ -378,11 +388,13 @@ function isValidMove(board, letter, row, col){
   while(rowDR < size && colDR < size && myArr[placeDDR] != " "){
     dDRArr.push(rowDR, colDR);
     sepDDR.push(dDRArr);
-      cells.push(sepDDR);
     rowDR += 1;
     colDR += 1;
     placeDDR += 1;
     placeDDR += size;
+    if(myArr[placeDDR] == letter){
+      cells.push(sepDDR);
+    }
   }
   // check diag down/left
   var dDLArr = [];
@@ -392,11 +404,13 @@ function isValidMove(board, letter, row, col){
   while(rowDL < size && colDL > 0 && myArr[placeDDL] != " "){
     dDLArr.push(rowDL, colDl);
     sepDDL.push(dDLArr);
-    cells.push(sepDDL);
     rowDL += 1;
     colDL -= 1;
     placeDDL -= 1;
     placeDDL += size;
+    if(myArr[placeDDL] == letter){
+      cells.push(sepDDL);
+    }
   }
   // check diag up/left
   var dULArr = [];
@@ -407,11 +421,13 @@ function isValidMove(board, letter, row, col){
   while(rowUL > 0 && colUL > 0 && myArr[placeDUL] != " "){
     dULArr.push(rowUL, colUL);
     sepDUL.push(dULArr);
-      cells.push(sepDUL);
     rowUL -= 1;
     colUL -= 1;
     placeDDL -= 1;
     placeDDL -= size;
+    if(myArr[placeDUL] == letter){
+      cells.push(sepDUL);
+    }
   }
   console.log(cells);
   if(cells.length == 0){
