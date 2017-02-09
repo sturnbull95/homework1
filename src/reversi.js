@@ -414,7 +414,6 @@ function isValidMove(board, letter, row, col){
       cells.push(sepDDL);
     }
   }
-  //help
   // check diag up/left
   var dULArr = [];
   var rowUL = row - 1;
@@ -495,6 +494,7 @@ function getValidMoves(board, letter){
       }
   }
   return twoDArr;
+}
 }
 
 module.exports = {
