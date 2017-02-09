@@ -487,6 +487,7 @@ function getValidMoves(board, letter){
       var obj = indexToRowCol(i);
       var oneDArr = [];
       oneDArr.push(obj.row,obj.col);
+      console.log(oneDArr);
       if(isValidMove(board,letter,obj.row,obj.col)){
         twoDArr.push(oneDArr);
       }
