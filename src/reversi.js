@@ -193,7 +193,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   // check south
   var southArr = [];
   var placeS = index + size;
-  var moveS = row + 1;
+  var moveS = lastRow + 1;
   while(moveS < size && myArr[placeS] != " "){
     southArr.push(moveS,lastCol);
     sepSouth.push(southArr);
