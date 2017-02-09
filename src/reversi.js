@@ -196,6 +196,7 @@ function getCellsToFlip(board, lastRow, lastCol){
   var moveS = lastRow + 1;
   while(moveS < size && myArr[placeS] != " "){
     southArr.push(moveS,lastCol);
+    console.log(southArr);
     sepSouth.push(southArr);
     moveS += 1;
     placeS += size;
