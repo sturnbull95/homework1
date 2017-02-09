@@ -322,6 +322,7 @@ function isValidMove(board, letter, row, col){
     console.log(sepNorth);
     moveN -= 1;
     placeN -= size;
+    console.log(myArr[placeN]);
     if(myArr[placeN] == letter){
       cells.push(sepNorth);
     }
