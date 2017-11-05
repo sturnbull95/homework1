@@ -1,3 +1,4 @@
+// all methods here 
 function repeat(value, n){
   const arr = [];
   for(var i = 0; i < n; i++){
